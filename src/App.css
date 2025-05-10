@@ -1,0 +1,59 @@
+/* Root Variables */
+:root {
+  --bg-color: #d8d4d3;
+  --nav-color: #3d3d3d;
+  --heading-bg: #3d3d3d;
+  --card-bg: #352d28;
+  --font-color: #3d3d3d;
+  --heading-color: #fff;
+  --accent-color: #947f57;
+  --accent-hover: #947f57;
+  --border-radius: 8px;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --font-stack: system-ui, sans-serif;
+  --scale: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-stack);
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Example Styles for Headings and Links */
+h1, h2, h3 {
+  color: var(--heading-color);
+}
+
+h1 {
+  font-family: 'ITC Bauhaus', sans-serif;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Optional: Button example */
+button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}

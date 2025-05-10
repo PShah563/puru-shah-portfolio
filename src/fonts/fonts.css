@@ -1,0 +1,38 @@
+/* Import Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* Roc Grotesk */
+@font-face {
+  font-family: 'Roc Grotesk';
+  src: url('../assets/fonts/RocGrotesk-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* FF Basic Gothic Pro */
+@font-face {
+  font-family: 'FF Basic Gothic Pro';
+  src: url('../assets/fonts/FFBasicGothicPro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ITC Bauhaus */
+@font-face {
+  font-family: 'ITC Bauhaus';
+  src: url('../assets/fonts/bauhauslightbt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-Thin';
+  src: url('../assets/fonts/Montserrat-Thin.ttf') format('ttf');
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+}
+

@@ -1,0 +1,84 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    height: 40vh;
+    width: 100vw;
+    margin: 20vh 0 35vh;
+  }
+  
+  .logo-wrapper {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .logo-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: scale(var(--scale));
+    width: 800px;
+    height: 800px;
+  }
+  
+  .p {
+    top: 0;
+    left: 4%;
+    font-size: 500px;
+  }
+  
+  .firstname {
+    top: 4.5%;
+    left: 36.5%;
+    font-size: 350px;
+    font-weight: 300;
+  }
+  
+  .s {
+    top: 30%;
+    left: 11%;
+    font-size: 420px;
+  }
+  
+  .lastname {
+    top: 40%;
+    left: 37.5%;
+    font-size: 280px;
+  }
+
+  .p, .firstname, .subheading {
+    color: var(--font-color);
+  }
+
+  .s, .lastname {
+    color: var(--accent-color);
+  }
+
+  .part {
+    position: absolute;
+    font-family: 'ITC Bauhaus', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .subheading {
+    top: 72.5%;
+    left: 35.5%;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-wrap: nowrap;
+  }
+
+  .email a {
+    position: absolute;
+    color: var(--font-color);
+    bottom: 0;
+    font-size: 40px;
+    left: 14%;
+  }
