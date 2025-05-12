@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import "../styles/ProjectItem.css";
 
 function ProjectItem({ company, projects, website }) {
-  const [carouselProject, setCarouselProject] = useState(null); // holds the clicked project object
+  const [carouselProject, setCarouselProject] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const touchStartX = useRef(null);
 
@@ -70,7 +70,7 @@ function ProjectItem({ company, projects, website }) {
           const openLink = (e) => {
             e.stopPropagation();
             if (proj.link) {
-              window.open(proj.link, "_blank", "noopener,noreferrer");
+              window.location.href = proj.link;
             }
           };
           const handleClick = () => {

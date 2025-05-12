@@ -1,0 +1,8 @@
+.about-wrapper {
+    padding: 10% 25%;
+}
+
+.about-heading {
+    font-size: 3.5rem;
+    color: var(--text-color);
+}

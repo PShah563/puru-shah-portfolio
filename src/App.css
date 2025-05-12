@@ -1,19 +1,33 @@
 /* Root Variables */
 :root {
-  --bg-color: #d8d4d3;
-  --nav-color: #3d3d3d;
-  --heading-bg: #3d3d3d;
-  --card-bg: #352d28;
-  --font-color: #3d3d3d;
-  --heading-color: #fff;
-  --accent-color: #947f57;
-  --accent-hover: #947f57;
   --border-radius: 8px;
   --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   --font-stack: system-ui, sans-serif;
   --scale: 1;
   width: 100vw;
   height: 100vh;
+}
+
+.light {
+  --bg-color: #d8d4d3;
+  --nav-color: #3d3d3d;
+  --heading-bg: #3d3d3d;
+  --card-bg: #3d3d3d;
+  --font-color: #3d3d3d;
+  --heading-color: #fff;
+  --accent-color: #947f57;
+  --accent-hover: #64563b;
+}
+
+.dark {
+  --bg-color: #3d3d3d;
+  --nav-color: #d8d4d3;
+  --heading-bg: #d8d4d3;
+  --card-bg: #d8d4d3;
+  --font-color: #d8d4d3;
+  --heading-color: #222;
+  --accent-color: #947f57;
+  --accent-hover: #64563b;
 }
 
 body {
@@ -56,4 +70,11 @@ button {
 
 button:hover {
   background: var(--accent-hover);
+}
+
+.page {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
 }

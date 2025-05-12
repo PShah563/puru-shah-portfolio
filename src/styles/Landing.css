@@ -79,6 +79,7 @@
     position: absolute;
     color: var(--font-color);
     bottom: 0;
-    font-size: 40px;
+    font-size: 38px;
     left: 14%;
+    font-weight: 600;
   }

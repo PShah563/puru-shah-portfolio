@@ -1,4 +1,5 @@
 const projects = [
+  //GBCS Group
   {
     company: "GBCS Group",
     website: "GBCSGroup.com",
@@ -10,11 +11,16 @@ const projects = [
         focalY: "5%",
         zoom: "1.7",
         slides: [
-          ["https://i.imgur.com/g4NB22v.png" , "https://i.imgur.com/5JIiSkJ.png"],
-          ["https://i.imgur.com/os3QdjT.png", "https://i.imgur.com/s7KJCw2.png", "https://i.imgur.com/sGY6sIq.png"],
-          ["https://i.imgur.com/5Tc935c.png", "https://i.imgur.com/v8lQS8b.png"],
+          ["https://i.imgur.com/g4NB22v.png"],
+          ["https://i.imgur.com/5JIiSkJ.png"],
+          ["https://i.imgur.com/os3QdjT.png"],
+          ["https://i.imgur.com/s7KJCw2.png"],
+          ["https://i.imgur.com/sGY6sIq.png"],
+          ["https://i.imgur.com/5Tc935c.png"],
+          ["https://i.imgur.com/v8lQS8b.png"],
         ],
-        link: "https://example.com/landing",
+        slug: "gbcs-university-redesign",
+        link: "/projects/gbcs-university-redesign",
       },
       {
         title: "CEO Portfolio Design",
@@ -68,6 +74,7 @@ const projects = [
       },
     ],
   },
+  //Blue Like Me LLC.
   {
     company: "Blue Like Me LLC.",
     website: "bluelikeme.com",
@@ -125,6 +132,7 @@ const projects = [
       },
     ],
   },
+  //Metro One
   {
     company: "Metro One",
     projects: [
@@ -146,6 +154,7 @@ const projects = [
       },
     ],
   },
+  //Personal Projects
   {
     company: "Personal Projects",
     projects: [
