@@ -6,6 +6,7 @@
     height: 40vh;
     width: 100vw;
     margin: 20vh 0 35vh;
+    user-select: none;
   }
   
   .logo-wrapper {

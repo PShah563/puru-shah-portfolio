@@ -23,6 +23,7 @@
   background-color: #bbb;
   transition: 0.4s;
   border-radius: 34px;
+  outline: 2.5px solid var(--nav-color);
 }
 
 .theme-switch .slider:before {
