@@ -109,7 +109,8 @@ const projects = [
           ["https://i.imgur.com/JVks3MJ.png", "https://i.imgur.com/4TRtG9R.png"],
           ["https://i.imgur.com/CYjO1wU.png", "https://i.imgur.com/Q3n0pIe.png"],
         ],
-        link: "https://example.com/portfolio",
+        slug: "blue-like-me-tees",
+        link: "/projects/blue-like-me-tees",
       },
       {
         title: "Yoga Mats",
