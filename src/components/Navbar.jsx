@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="#home" className="nav-logo">
+      <a href="/" className="nav-logo">
         <img className="nav-logo" src={theme === 'dark' ? 
           '/mini_logo_light.png' : 
           '/mini_logo_dark.png'
