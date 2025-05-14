@@ -1,89 +1,105 @@
 .landing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-color);
-    height: 40vh;
-    width: 100vw;
-    margin: 20vh 0 35vh;
-    user-select: none;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  height: 40vh;
+  width: 100vw;
+  margin: 20vh 0 35vh;
+  user-select: none;
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 1 / 1;
+  margin-top: 8.2rem;
+  padding: 5rem;
+  overflow: hidden;
+}
+
+.logo-static {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transform-origin: center center;
+  width: 800px;
+  height: 800px;
+}
+
+.p {
+  top: 0;
+  left: 4%;
+  font-size: 500px;
+}
+
+.firstname {
+  top: 4.5%;
+  left: 36.5%;
+  font-size: 350px;
+  font-weight: 300;
+}
+
+.s {
+  top: 30%;
+  left: 11%;
+  font-size: 420px;
+}
+
+.lastname {
+  top: 40%;
+  left: 37.5%;
+  font-size: 280px;
+}
+
+.p,
+.firstname,
+.subheading {
+  color: var(--font-color);
+}
+
+.s,
+.lastname {
+  color: var(--accent-color);
+}
+
+.part {
+  position: absolute;
+  font-family: 'ITC Bauhaus Light', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
+}
+
+.subheading {
+  top: 72.5%;
+  left: 35.5%;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-wrap: nowrap;
+  letter-spacing: .12rem;
+}
+
+.email a {
+  position: absolute;
+  color: var(--font-color);
+  bottom: 0;
+  font-size: 32px;
+  left: 18.5%;
+  font-weight: 550;
+  letter-spacing: .15rem;
+}
+
+@media(max-width: 768px) {
   .logo-wrapper {
-    position: relative;
-    width: 90vw;
-    max-width: 900px;
-    aspect-ratio: 1 / 1;
-    margin-top: 8.2rem;
+    max-width: 800px;
   }
 
   .logo-static {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: top left;
-    transform: scale(var(--scale));
-    width: 900px;
-    height: 900px;
+    width: 800px;
+    height: 800px;
   }
-  
-  .p {
-    top: 0;
-    left: 4%;
-    font-size: 500px;
-  }
-  
-  .firstname {
-    top: 4.5%;
-    left: 36.5%;
-    font-size: 350px;
-    font-weight: 300;
-  }
-  
-  .s {
-    top: 30%;
-    left: 11%;
-    font-size: 420px;
-  }
-  
-  .lastname {
-    top: 40%;
-    left: 37.5%;
-    font-size: 280px;
-  }
-
-  .p, .firstname, .subheading {
-    color: var(--font-color);
-  }
-
-  .s, .lastname {
-    color: var(--accent-color);
-  }
-
-  .part {
-    position: absolute;
-    font-family: 'ITC Bauhaus Light', sans-serif;
-    font-weight: 400;
-    margin: 0;
-    line-height: 1;
-  }
-  
-  .subheading {
-    top: 72.5%;
-    left: 35.5%;
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    text-wrap: nowrap;
-    letter-spacing: .12rem;
-  }
-
-  .email a {
-    position: absolute;
-    color: var(--font-color);
-    bottom: 0;
-    font-size: 32px;
-    left: 18.5%;
-    font-weight: 550;
-    letter-spacing: .15rem;
-  }
+}
