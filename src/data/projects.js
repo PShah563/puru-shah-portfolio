@@ -77,7 +77,7 @@ const projects = [
   //Blue Like Me LLC.
   {
     company: "Blue Like Me LLC.",
-    website: "bluelikeme.com",
+    website: "BlueLikeMe.com",
     projects: [
       {
         title: "Business Card",

@@ -12,8 +12,9 @@
   .logo-wrapper {
     position: relative;
     width: 90vw;
-    max-width: 800px;
+    max-width: 900px;
     aspect-ratio: 1 / 1;
+    margin-top: 8.2rem;
   }
 
   .logo-static {
@@ -22,8 +23,8 @@
     left: 0;
     transform-origin: top left;
     transform: scale(var(--scale));
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 900px;
   }
   
   .p {
@@ -61,7 +62,7 @@
 
   .part {
     position: absolute;
-    font-family: 'ITC Bauhaus', sans-serif;
+    font-family: 'ITC Bauhaus Light', sans-serif;
     font-weight: 400;
     margin: 0;
     line-height: 1;
@@ -74,13 +75,15 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-wrap: nowrap;
+    letter-spacing: .12rem;
   }
 
   .email a {
     position: absolute;
     color: var(--font-color);
     bottom: 0;
-    font-size: 38px;
-    left: 14%;
-    font-weight: 600;
+    font-size: 32px;
+    left: 18.5%;
+    font-weight: 550;
+    letter-spacing: .15rem;
   }

@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { HashLink } from 'react-router-hash-link';
+import { useTheme } from "../contexts/ThemeContext";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
     <nav className="navbar">
       <a href="#home" className="nav-logo">
-        <img className="nav-logo" src="/logo.png" />
+        <img className="nav-logo" src={theme === 'dark' ? 
+          '/mini_logo_light.png' : 
+          'mini_logo_dark.png'
+          } />
       </a>
 
       <button

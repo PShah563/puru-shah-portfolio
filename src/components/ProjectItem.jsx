@@ -54,7 +54,7 @@ function ProjectItem({ company, projects, website }) {
   return (
     <div className="project-item">
       <h2 className="company-name">{company}</h2>
-      {website && (
+      {website ? (
         <a
           className="website"
           href={`https://${website}`}
@@ -63,6 +63,8 @@ function ProjectItem({ company, projects, website }) {
         >
           {website}
         </a>
+      ) : (
+        <p>&nbsp;</p>
       )}
 
       <div className="project-grid">

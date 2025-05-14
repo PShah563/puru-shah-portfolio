@@ -37,10 +37,10 @@ export function useBackgroundPaths({
       }
 
       const radius = 16;
-      const verticalStartOffset = 119;
-      const verticalStartOffset2 = 161;
-      const headingOffset = 21;
-      const headingOffset2 = 62;
+      const verticalStartOffset = 223;
+      const verticalStartOffset2 = 269.5;
+      const headingOffset = 55;
+      const headingOffset2 = 101;
       const finalVerticalOffset = 140;
       const leftX = inset;
       const rightX = width - inset;

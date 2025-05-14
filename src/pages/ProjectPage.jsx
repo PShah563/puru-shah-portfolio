@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { useBackgroundPaths } from "../components/BackgroundPaths";
 import projects from "../data/projects";
+import '../styles/ProjectPage.css';
 
 export default function ProjectPage() {
   const { slug } = useParams();
@@ -88,7 +89,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="page project" ref={sectionRef} style={{ padding: "83px 0 120px" }}>
+    <div className="page project" ref={sectionRef} >
       <svg
         ref={svgRef}
         className="line-background"
@@ -100,7 +101,7 @@ export default function ProjectPage() {
         preserveAspectRatio="none"
       />
 
-      <div className="project-wrapper" ref={(el) => (itemRefs.current[0] = el)}>
+      <div className="project-page-wrapper" ref={(el) => (itemRefs.current[0] = el)}>
         <h2 className="company-name">
           {parentCompany?.company}
         </h2>
@@ -116,7 +117,7 @@ export default function ProjectPage() {
           </a>
         )}
 
-        <div className="project-grid">
+        <div className="project-page-grid">
           {project.slides.map((group, index) => (
             <div
               key={index}

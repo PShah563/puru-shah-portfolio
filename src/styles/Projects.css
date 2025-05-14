@@ -2,7 +2,12 @@
     position: relative;
     text-align: center;
     background-color: var(--heading-bg);
+    font-size: 1.7rem;
     z-index: 2;
+}
+
+.projects-heading h1 {
+    font-family: 'ITC Bauhaus', sans-serif;
 }
 
 .projects-section {
@@ -14,6 +19,7 @@
 .project-wrapper {
     position: relative;
     margin: 1rem auto;
+    padding: 2rem 0;
     width: 100vw;
     z-index: 2;
 }
@@ -32,4 +38,13 @@
     left: 0;
     z-index: 0;
     pointer-events: none;
+}
+
+@media(max-width: 768px) {
+    .projects-heading {
+        font-size: 1.2rem;
+    }
+    .project-wrapper {
+        padding-top: 5.1rem;
+    }
 }

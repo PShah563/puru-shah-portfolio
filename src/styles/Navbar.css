@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: .5rem 2rem;
-  position: sticky;
+  position: fixed;
+  width: 97vw;
   top: -1px;
   z-index: 10;
   background: var(--nav-color);
@@ -42,6 +43,7 @@
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  padding-right: 2rem;
 }
 
 .nav-links a {
@@ -51,6 +53,9 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .navbar {
+    width: 90vw;
+  }
   .hamburger {
     display: block;
   }

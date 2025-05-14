@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useBackgroundPaths } from "../components/BackgroundPaths";
-import '../styles/Contact.css';
+import "../styles/Contact.css";
 
 export default function Contact() {
   const sectionRef = useRef(null);
@@ -18,15 +18,25 @@ export default function Contact() {
 
   return (
     <div className="page cta-section" ref={sectionRef}>
-      <svg ref={svgRef} className="line-background" preserveAspectRatio="none" />
-      <svg ref={svgRef2} className="line-background-accent" preserveAspectRatio="none" />
+      <svg
+        ref={svgRef}
+        className="line-background"
+        preserveAspectRatio="none"
+      />
+      <svg
+        ref={svgRef2}
+        className="line-background-accent"
+        preserveAspectRatio="none"
+      />
 
       <div className="contact-wrapper" ref={(el) => (itemRefs.current[0] = el)}>
-        {/* <h2 className="contact-heading">Ready to take your project to the next level?</h2>
+        <div className="contact-content">
+          {/* <h2 className="contact-heading">Ready to take your project to the next level?</h2>
         <p>Let's work together to build something amazing. Reach out today!</p> */}
-        <p>
-          Have a project in mind or just want to say hi? Fill out the form below and I’ll get back to you soon!
-        </p>
+          <p>
+            Have a project in mind or just want to say hi? Fill out the form
+            below and I’ll get back to you soon!
+          </p>
           <form
             name="contact"
             method="POST"
@@ -51,12 +61,20 @@ export default function Contact() {
             </p>
             <p>
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4" required></textarea>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                required
+              ></textarea>
             </p>
             <p>
-              <button type="submit" className="cta-btn">Send Message</button>
+              <button type="submit" className="cta-btn">
+                Send Message
+              </button>
             </p>
           </form>
+        </div>
       </div>
     </div>
   );

@@ -21,8 +21,16 @@
 
 /* ITC Bauhaus */
 @font-face {
-  font-family: 'ITC Bauhaus';
+  font-family: 'ITC Bauhaus Light';
   src: url('../assets/fonts/bauhauslightbt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Bauhaus';
+  src: url('../assets/fonts/BauhausRegular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

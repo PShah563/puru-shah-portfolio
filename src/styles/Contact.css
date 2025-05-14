@@ -1,17 +1,20 @@
-.cta-section { 
+.cta-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.contact-wrapper { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    margin: 12rem;
+.contact-wrapper {
+    height: fit-content;
+    padding: 10%;
+}
+
+.contact-content {
+    margin: 0 25% 0;
+    padding: 16% 2% 8%;
+    overflow: hidden;
 }
 
 .contact-heading {
@@ -50,7 +53,7 @@
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    width: 90%;
     padding: 0.5rem;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
@@ -91,8 +94,13 @@
         align-items: center;
     }
 
+    .contact-content {
+        margin: 0 10%;
+        padding: 50% 2%;
+    }
+
     .contact-form {
         margin: 0;
-        min-width: 50vw;
+        min-width: 40vw;
     }
 }
