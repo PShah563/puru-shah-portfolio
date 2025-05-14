@@ -2,10 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-color);
+  background-color: var(--bg-logo);
   height: 50vh;
   width: 100vw;
-  margin: 20vh 0 35vh;
+  padding: 20vh 0 35vh;
   user-select: none;
 }
 
