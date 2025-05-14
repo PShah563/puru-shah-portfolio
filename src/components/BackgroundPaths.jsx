@@ -6,6 +6,11 @@ export function useBackgroundPaths({
   sectionRef,
   itemRefs,
   projects,
+  verticalStartOffset = 223,
+  verticalStartOffset2 = 269.5,
+  headingOffset = 55,
+  headingOffset2 = 101,
+  finalVerticalOffset = 140,
 }) {
   useEffect(() => {
     const drawPaths = () => {
@@ -36,12 +41,7 @@ export function useBackgroundPaths({
         inset2 = Math.min(Math.max(containerWidth * 0.165, 32), 1000);
       }
 
-      const radius = 16;
-      const verticalStartOffset = 223;
-      const verticalStartOffset2 = 269.5;
-      const headingOffset = 55;
-      const headingOffset2 = 101;
-      const finalVerticalOffset = 140;
+      const radius = 32;
       const leftX = inset;
       const rightX = width - inset;
       const left2X = inset2;
@@ -50,12 +50,12 @@ export function useBackgroundPaths({
       let path1 = "";
       let currentX1 = rightX;
       let currentY1 = verticalStartOffset;
-      path1 += `M ${currentX1},0  V ${currentY1}`;
+      path1 += `M ${currentX1 + radius},0  V ${currentY1 - radius}`;
 
       let path2 = "";
       let currentX2 = left2X;
       let currentY2 = verticalStartOffset2;
-      path2 += `M ${currentX2},0  V ${currentY2}`;
+      path2 += `M ${currentX2 - radius},0  V ${currentY2 - radius}`;
 
       itemRefs.current.forEach((el, i) => {
         if (!el) return;
@@ -79,7 +79,7 @@ export function useBackgroundPaths({
         const arcDir1 = goingRight ? -1 : 1;
         const sweepFlag1 = goingRight ? 0 : 1;
 
-        path1 += `A ${radius} ${radius} 0 0 ${sweepFlag1} ${
+        path1 += `A ${radius} ${radius} 0 0 1 ${
           currentX1 + arcDir1
         },${currentY1}`;
         currentX1 += arcDir1;
@@ -113,7 +113,7 @@ export function useBackgroundPaths({
         const arcDir2 = goingRight ? 1 : -1;
         const sweepFlag2 = goingRight ? 1 : 0;
 
-        path2 += `A ${radius} ${radius} 0 0 ${sweepFlag2} ${
+        path2 += `A ${radius} ${radius} 0 0 0 ${
           currentX2 + arcDir2
         },${currentY2}`;
         currentX2 += arcDir2;
@@ -156,10 +156,10 @@ export function useBackgroundPaths({
         },${currentY1}`;
         currentX1 += finalDir;
 
-        path1 += `H ${tailSideX}`;
-        path1 += `A ${radius} ${radius} 0 0 ${finalDir === 0 ? 1 : 0} ${
+        path1 += `H ${tailSideX - radius}`;
+        path1 += `A ${radius} ${radius} 0 0 1 ${
           tailSideX + finalDir
-        },${currentY1}`;
+        },${currentY1 + radius}`;
         path1 += `V ${currentY1 + verticalStartOffset}`;
       };
 
@@ -174,10 +174,10 @@ export function useBackgroundPaths({
         },${currentY2}`;
         currentX2 += finalDir;
 
-        path2 += `H ${tailSideX}`;
-        path2 += `A ${radius} ${radius} 0 0 ${finalDir === 0 ? 1 : 0} ${
+        path2 += `H ${tailSideX + radius}`;
+        path2 += `A ${radius} ${radius} 0 0 0 ${
           tailSideX + finalDir
-        },${currentY2}`;
+        },${currentY2 + radius}`;
         path2 += `V ${currentY2 + verticalStartOffset2}`;
       };
 
@@ -213,5 +213,12 @@ export function useBackgroundPaths({
     return () => {
       observer.disconnect();
     };
-  }, [projects]);
+  }, [
+    projects,
+    verticalStartOffset,
+    verticalStartOffset2,
+    headingOffset,
+    headingOffset2,
+    finalVerticalOffset,
+  ]);
 }

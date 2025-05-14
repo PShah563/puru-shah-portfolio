@@ -14,6 +14,8 @@ export default function About() {
     sectionRef,
     itemRefs,
     projects: [{}],
+    verticalStartOffset: 122,
+    verticalStartOffset2: 168,
   });
 
   return (

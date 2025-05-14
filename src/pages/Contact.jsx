@@ -13,7 +13,9 @@ export default function Contact() {
     svgRef2,
     sectionRef,
     itemRefs,
-    projects: [{}], // dummy to trigger drawing
+    projects: [{}],
+    verticalStartOffset: 122,
+    verticalStartOffset2: 168,
   });
 
   return (
