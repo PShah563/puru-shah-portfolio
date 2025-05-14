@@ -9,22 +9,22 @@
 }
 
 .light {
-  --bg-color: #d8d4d3;
+  --bg-color: #b8a690;
   --nav-color: #3d3d3d;
   --heading-bg: #3d3d3d;
   --card-bg: #3d3d3d;
   --font-color: #3d3d3d;
-  --heading-color: #d8d4d3;
+  --heading-color: #b8a690;
   --accent-color: #947f57;
   --accent-hover: #64563b;
 }
 
 .dark {
   --bg-color: #3d3d3d;
-  --nav-color: #d8d4d3;
-  --heading-bg: #d8d4d3;
-  --card-bg: #d8d4d3;
-  --font-color: #d8d4d3;
+  --nav-color: #b8a690;
+  --heading-bg: #b8a690;
+  --card-bg: #b8a690;
+  --font-color: #b8a690;
   --heading-color: #3d3d3d;
   --accent-color: #947f57;
   --accent-hover: #64563b;
