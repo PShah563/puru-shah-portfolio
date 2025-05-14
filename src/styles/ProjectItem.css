@@ -239,7 +239,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--heading-color);
+  color: #fff;
 }
 
 .close-btn:hover {
