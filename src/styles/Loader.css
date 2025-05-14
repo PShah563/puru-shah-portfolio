@@ -1,0 +1,57 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-color);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 0.3s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.spinner {
+    position: relative;
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--accent-color);
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.spinner::after {
+  content: "";
+  position: absolute;
+  top: 7%;
+  right: .3%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+.spinner::before {
+  content: "";
+  position: absolute;
+  top: 7.2%;
+  left: 10.8%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

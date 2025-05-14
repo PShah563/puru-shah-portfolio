@@ -2,6 +2,7 @@
     position: relative;
     text-align: center;
     background-color: var(--heading-bg);
+    color: var(--heading-color);
     font-size: 1.7rem;
     z-index: 2;
 }
@@ -13,7 +14,7 @@
 .projects-section {
     position: relative;
     width: 100vw;
-    padding: 0 0 3rem 0;
+    padding: 0 0 6rem 0;
 }
 
 .project-wrapper {
@@ -43,8 +44,5 @@
 @media(max-width: 768px) {
     .projects-heading {
         font-size: 1.2rem;
-    }
-    .project-wrapper {
-        padding-top: 5.1rem;
     }
 }

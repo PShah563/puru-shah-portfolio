@@ -1,7 +1,7 @@
 .theme-switch {
   position: fixed;
-  top: 12vh;
-  right: 10vw;
+  top: 9vh;
+  right: 1vw;
   width: 48px;
   height: 24px;
   z-index: 10;
@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #bbb;
+  background-color: #fff;
   transition: 0.4s;
   border-radius: 34px;
   outline: 2.5px solid var(--nav-color);
@@ -33,7 +33,7 @@
   width: 18px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--nav-color);
   transition: 0.4s;
   border-radius: 50%;
 }
@@ -45,4 +45,29 @@
 
 .theme-switch input:checked + .slider:before {
   transform: translateX(24px);
+}
+
+.theme-icon {
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  user-select: none;
+  z-index: 1000;
+}
+
+/* Optional: add slight animation */
+.theme-icon:has(+ input:checked) {
+  transform: rotate(360deg);
+}
+
+@media(max-width: 768px) {
+  .theme-switch {
+    position: absolute;
+    margin: 1rem 0;
+    top: -20px;
+    right: 0;
+    z-index: auto;
+  }
 }

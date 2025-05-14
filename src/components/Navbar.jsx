@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HashLink } from 'react-router-hash-link';
 import { useTheme } from "../contexts/ThemeContext";
+import ThemeToggle from "./ThemeToggle";
 import "../styles/Navbar.css";
 
 function Navbar() {
@@ -39,6 +40,9 @@ function Navbar() {
         </li>
         <li>
           <a href="/contact">Contact</a>
+        </li>
+        <li className="nav-theme-toggle">
+          <ThemeToggle />
         </li>
       </ul>
     </nav>

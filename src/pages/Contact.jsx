@@ -14,8 +14,9 @@ export default function Contact() {
     sectionRef,
     itemRefs,
     projects: [{}],
-    verticalStartOffset: 122,
-    verticalStartOffset2: 168,
+    verticalStartOffset: 112,
+    verticalStartOffset2: 158,
+    finalVerticalOffset: 10,
   });
 
   return (

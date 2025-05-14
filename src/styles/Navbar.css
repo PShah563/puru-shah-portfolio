@@ -84,4 +84,10 @@
     transform: scaleY(1);
     pointer-events: auto;
   }
+  .nav-theme-toggle{
+    position: relative;
+    display: block;
+    width: 100%;
+    color: var(--bg-color);
+  }
 }

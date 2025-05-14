@@ -28,11 +28,8 @@ const projects = [
         focalX: "-30%",
         zoom: "1.1",
         slides: [
-            ["/images/design1.jpg"],
-            ["/images/design2a.jpg", "/images/design2b.jpg"],
-            ["/images/design3.jpg"],
+            ["https://i.imgur.com/qXjZJP9.png"],
           ],
-        link: "https://example.com/campaign",
       },
       {
         title: "GBCS Homepage Design",
@@ -41,11 +38,8 @@ const projects = [
         focalY: "45%",
         zoom: "3",
         slides: [
-          ["/images/design1.jpg"],
-          ["/images/design2a.jpg", "/images/design2b.jpg"],
-          ["/images/design3.jpg"],
+          ["https://i.imgur.com/SOipspE.png"],
         ],
-        link: "https://example.com/campaign",
       },
       {
         title: "GBCS LinkedIn Banner Design",
@@ -54,11 +48,8 @@ const projects = [
         focalY: "0",
         zoom: "1",
         slides: [
-          ["/images/design1.jpg"],
-          ["/images/design2a.jpg", "/images/design2b.jpg"],
-          ["/images/design3.jpg"],
+          ["https://i.imgur.com/1vr2rQd.png"],
         ],
-        link: "https://example.com/campaign",
       },
       {
         title: "App Design",
@@ -67,10 +58,13 @@ const projects = [
         focalY: "-70%",
         zoom: "3",
         slides: [
-          ["https://i.imgur.com/GzWQXds.png", "https://i.imgur.com/dTrbR7u.png", 
-            "https://i.imgur.com/kYUeOSg.png", "https://i.imgur.com/bUBSxCl.png"],
+          ["https://i.imgur.com/GzWQXds.png"], 
+          ["https://i.imgur.com/dTrbR7u.png"], 
+          ["https://i.imgur.com/kYUeOSg.png"], 
+          ["https://i.imgur.com/bUBSxCl.png"],
         ],
-        link: "https://example.com/campaign",
+        slug: "app-design",
+        link: "/projects/app-design",
       },
     ],
   },
@@ -87,7 +81,6 @@ const projects = [
         slides: [
           ["https://i.imgur.com/j4EVLdb.png", "https://i.imgur.com/MqKDUKR.png"]
         ],
-        link: "https://example.com/portfolio",
       },
       {
         title: "Flyers",
@@ -103,7 +96,8 @@ const projects = [
           ["https://i.imgur.com/R3BQ2B1.jpeg"],
           ["https://i.imgur.com/J3RLV8N.jpeg"],
         ],
-        link: "https://example.com/portfolio",
+        slug: "blue-like-me-flyers",
+        link: "/projects/blue-like-me-flyers",
       },
       {
         title: "Tee-Shirt Design",
@@ -128,7 +122,8 @@ const projects = [
           ["https://i.imgur.com/hxM1DIs.png", "https://i.imgur.com/ypgbKWj.jpeg"],
           ["https://i.imgur.com/kRt454W.png", "https://i.imgur.com/s2g6UbE.jpeg"],
         ],
-        link: "https://example.com/portfolio",
+        slug: "blue-like-me-yoga-mats",
+        link: "/projects/blue-like-me-yoga-mats",
       },
     ],
   },
@@ -137,46 +132,11 @@ const projects = [
     company: "Metro One",
     projects: [
       {
-        title: "Logo",
-        thumbnail: "https://i.imgur.com/Y5c4BnI.png",
-        slides: [
-          ["https://i.imgur.com/Y5c4BnI.png"],
-        ],
-        link: "https://example.com/portfolio",
-      },
-      {
         title: "Flyer",
         thumbnail: "https://i.imgur.com/9Aq1nP2.png",
         slides: [
           ["https://i.imgur.com/9Aq1nP2.png"],
         ],
-        link: "https://example.com/portfolio",
-      },
-    ],
-  },
-  //Personal Projects
-  {
-    company: "Personal Projects",
-    projects: [
-      {
-        title: "Portfolio Website",
-        thumbnail: "/images/portfolio.jpg",
-        slides: [
-          ["/images/design1.jpg"],
-          ["/images/design2a.jpg", "/images/design2b.jpg"],
-          ["/images/design3.jpg"],
-        ],
-        link: "https://example.com/portfolio",
-      },
-      {
-        title: "Portfolio Website",
-        thumbnail: "/images/portfolio.jpg",
-        slides: [
-          ["/images/design1.jpg"],
-          ["/images/design2a.jpg", "/images/design2b.jpg"],
-          ["/images/design3.jpg"],
-        ],
-        link: "https://example.com/portfolio",
       },
     ],
   },

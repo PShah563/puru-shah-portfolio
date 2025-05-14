@@ -10,7 +10,7 @@ export function useBackgroundPaths({
   verticalStartOffset2 = 269.5,
   headingOffset = 55,
   headingOffset2 = 101,
-  finalVerticalOffset = 140,
+  finalVerticalOffset = 70,
 }) {
   useEffect(() => {
     const drawPaths = () => {
@@ -160,7 +160,7 @@ export function useBackgroundPaths({
         path1 += `A ${radius} ${radius} 0 0 1 ${
           tailSideX + finalDir
         },${currentY1 + radius}`;
-        path1 += `V ${currentY1 + verticalStartOffset}`;
+        path1 += `V ${currentY1 + verticalStartOffset * 20}`;
       };
 
       const tail2 = () => {
@@ -178,7 +178,7 @@ export function useBackgroundPaths({
         path2 += `A ${radius} ${radius} 0 0 0 ${
           tailSideX + finalDir
         },${currentY2 + radius}`;
-        path2 += `V ${currentY2 + verticalStartOffset2}`;
+        path2 += `V ${currentY2 + verticalStartOffset2 * 20}`;
       };
 
       tail1();

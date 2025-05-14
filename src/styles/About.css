@@ -1,6 +1,5 @@
 .about-wrapper {
-
-    height: fit-content;
+    height: 90vh;
 }
 
 .about-heading {
@@ -9,12 +8,17 @@
 }
 
 .about-content { 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
     margin:0 25% 0;
-    padding: 16% 2% 8%;
-    overflow: hidden;
 }
 
 @media(max-width: 768px) {
+    .about-wrapper{
+        height: fit-content;
+    }
     .about-content{
         margin: 0 10%;
         padding: 40% 2%;

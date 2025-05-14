@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import "../styles/ProjectItem.css";
 
-function ProjectItem({ company, projects, website }) {
+function ProjectItem({ company, projects, website, logo, index }) {
   const [carouselProject, setCarouselProject] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const touchStartX = useRef(null);
+  const isEven = index % 2 === 0;
 
   const openCarousel = (project) => {
     setCarouselProject(project);
@@ -67,7 +68,21 @@ function ProjectItem({ company, projects, website }) {
         <p>&nbsp;</p>
       )}
 
-      <div className="project-grid">
+      {logo && (
+        <div className="project-logo-container">
+          <div className={`project-logo-wrapper ${isEven ? "padding-left" : "padding-right"}`}>
+            <img
+              src={logo}
+              alt={`project logo`}
+              className="project-logo"
+            />
+          </div>
+        </div>
+      )}
+
+      <div
+        className={`project-grid ${isEven ? "padding-left" : "padding-right"}`}
+      >
         {projects.map((proj, idx) => {
           const openLink = (e) => {
             e.stopPropagation();
@@ -80,7 +95,12 @@ function ProjectItem({ company, projects, website }) {
           };
 
           return (
-            <div key={idx} className="project-link" onClick={handleClick}>
+            <div
+              key={idx}
+              className="project-link"
+              onClick={proj.link ? openLink : handleClick}
+              style={{ cursor: proj.link ? "pointer" : "zoom-in" }}
+            >
               <div className="project-thumb-wrapper">
                 <img
                   src={proj.thumbnail}
@@ -116,9 +136,11 @@ function ProjectItem({ company, projects, website }) {
               className="carousel-content"
               onClick={(e) => e.stopPropagation()}
             >
-              <button onClick={prevSlide} className="carousel-arrow left">
-                ‹
-              </button>
+              {carouselProject.slides.length > 1 && (
+                <button onClick={prevSlide} className="carousel-arrow left">
+                  ‹
+                </button>
+              )}
 
               <div
                 className={`carousel-slide ${
@@ -137,9 +159,11 @@ function ProjectItem({ company, projects, website }) {
                 ))}
               </div>
 
-              <button onClick={nextSlide} className="carousel-arrow right">
-                ›
-              </button>
+              {carouselProject.slides.length > 1 && (
+                <button onClick={nextSlide} className="carousel-arrow right">
+                  ›
+                </button>
+              )}
               <button className="close-btn" onClick={closeCarousel}>
                 ✕
               </button>

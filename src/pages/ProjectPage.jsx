@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { useBackgroundPaths } from "../components/BackgroundPaths";
 import projects from "../data/projects";
-import '../styles/ProjectPage.css';
+import "../styles/ProjectPage.css";
 
 export default function ProjectPage() {
   const { slug } = useParams();
@@ -16,6 +16,7 @@ export default function ProjectPage() {
   const [parentCompany, setParentCompany] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [carouselOpen, setCarouselOpen] = useState(false);
+  const [layoutClass, setLayoutClass] = useState("row-layout");
   const touchStartX = useRef(null);
 
   useEffect(() => {
@@ -29,6 +30,38 @@ export default function ProjectPage() {
       }
     }
   }, [slug]);
+
+  useEffect(() => {
+    if (!project) return;
+
+    const currentImages = project.slides[currentSlide];
+
+    if (currentImages.length > 2) {
+      setLayoutClass("double-column");
+      return;
+    }
+
+    Promise.all(
+      currentImages.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () =>
+              resolve(img.width > img.height ? "landscape" : "portrait");
+            img.src = src;
+          })
+      )
+    ).then((orientations) => {
+      if (currentImages.length === 1) {
+        setLayoutClass("single-column");
+      } else if (currentImages.length === 2) {
+        const landscapeCount = orientations.filter(
+          (o) => o === "landscape"
+        ).length;
+        setLayoutClass(landscapeCount === 2 ? "column-layout" : "row-layout");
+      }
+    });
+  }, [project, currentSlide]);
 
   useBackgroundPaths({
     svgRef,
@@ -91,7 +124,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="page project" ref={sectionRef} >
+    <div className="page project" ref={sectionRef}>
       <svg
         ref={svgRef}
         className="line-background"
@@ -103,10 +136,11 @@ export default function ProjectPage() {
         preserveAspectRatio="none"
       />
 
-      <div className="project-page-wrapper" ref={(el) => (itemRefs.current[0] = el)}>
-        <h2 className="company-name">
-          {parentCompany?.company}
-        </h2>
+      <div
+        className="project-page-wrapper"
+        ref={(el) => (itemRefs.current[0] = el)}
+      >
+        <h2 className="company-name">{parentCompany?.company}</h2>
 
         {parentCompany?.website && (
           <a
@@ -120,19 +154,26 @@ export default function ProjectPage() {
         )}
 
         <div className="project-page-grid">
-          {project.slides.map((group, index) => (
-            <div
-              key={index}
-              className="project-thumb-wrapper"
-              onClick={() => openCarousel(index)}
-            >
-              <img
-                src={group[0]}
-                alt={`Slide ${index + 1}`}
-                className="project-thumb"
-              />
-            </div>
-          ))}
+          {project.slides.map((group, slideIndex) =>
+            group.map((imgUrl, imgIndex) => (
+              <div
+                key={`${slideIndex}-${imgIndex}`}
+                className="project-thumb-wrapper"
+                onClick={() => openCarousel(slideIndex)}
+              >
+                <img
+                  src={imgUrl}
+                  alt={`Slide ${slideIndex + 1} - Image ${imgIndex + 1}`}
+                  className="project-thumb"
+                  style={{
+                    top: project.focalY || "auto",
+                    left: project.focalX || "auto",
+                    transform: `scale(${project.zoom || 1})`,
+                  }}
+                />
+              </div>
+            ))
+          )}
         </div>
       </div>
 
@@ -152,13 +193,7 @@ export default function ProjectPage() {
                 ‹
               </button>
 
-              <div
-                className={`carousel-slide ${
-                  project.slides[currentSlide].length <= 2
-                    ? "single-column"
-                    : "double-column"
-                }`}
-              >
+              <div className={`carousel-slide ${layoutClass}`}>
                 {project.slides[currentSlide].map((img, idx) => (
                   <img
                     key={idx}
@@ -169,9 +204,24 @@ export default function ProjectPage() {
                 ))}
               </div>
 
+              {project.slides.length > 1 && (
+                <div className="carousel-indicators">
+                  {project.slides.map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={`carousel-dot ${
+                        currentSlide === idx ? "active" : ""
+                      }`}
+                      onClick={() => setCurrentSlide(idx)}
+                    />
+                  ))}
+                </div>
+              )}
+
               <button onClick={nextSlide} className="carousel-arrow right">
                 ›
               </button>
+
               <button className="close-btn" onClick={closeCarousel}>
                 ✕
               </button>

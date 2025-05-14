@@ -16,6 +16,7 @@ export default function About() {
     projects: [{}],
     verticalStartOffset: 122,
     verticalStartOffset2: 168,
+    finalVerticalOffset: 0,
   });
 
   return (

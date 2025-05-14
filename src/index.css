@@ -54,6 +54,31 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#initial-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#initial-loader .spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #947f57;
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  /* animation: spin 0.9s linear infinite; */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
