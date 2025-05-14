@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
+  background-color: var(--bg-color);
   transition: 0.4s;
   border-radius: 34px;
   outline: 2.5px solid var(--nav-color);
@@ -36,11 +36,6 @@
   background-color: var(--nav-color);
   transition: 0.4s;
   border-radius: 50%;
-}
-
-/* Toggle on (dark mode) */
-.theme-switch input:checked + .slider {
-  background-color: #333;
 }
 
 .theme-switch input:checked + .slider:before {
