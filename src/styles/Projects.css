@@ -2,7 +2,6 @@
     position: relative;
     text-align: center;
     background-color: var(--heading-bg);
-    color: var(--heading-color);
     font-size: 1.7rem;
     z-index: 2;
 }
@@ -10,6 +9,7 @@
 .projects-heading h1 {
     font-family: 'ITC Bauhaus', sans-serif;
     margin-top: 0;
+    color: var(--accent-color);
 }
 
 .projects-section {
@@ -44,6 +44,6 @@
 
 @media(max-width: 768px) {
     .projects-heading {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }

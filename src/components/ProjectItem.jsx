@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useTheme } from "../contexts/ThemeContext";
 import "../styles/ProjectItem.css";
 
 function ProjectItem({ company, projects, website, logo, index }) {
@@ -7,6 +8,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const touchStartX = useRef(null);
   const isEven = index % 2 === 0;
+  const { theme } = useTheme();
 
   const openCarousel = (project) => {
     setCarouselProject(project);
@@ -54,35 +56,40 @@ function ProjectItem({ company, projects, website, logo, index }) {
 
   return (
     <div className="project-item">
-      <h2 className="company-name">{company}</h2>
+      <div className="project-heading">
+      <h2 className={`company-name ${isEven ? "margin-left" : "margin-right"}`}>{company}</h2>
       {website ? (
         <a
-          className="website"
+          className={`website ${isEven ? "margin-left" : "margin-right"}`}
           href={`https://${website}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           {website}
         </a>
+        
       ) : (
         <p>&nbsp;</p>
       )}
-
-      {logo && (
-        <div className="project-logo-container">
-          <div className={`project-logo-wrapper ${isEven ? "padding-left" : "padding-right"}`}>
-            <img
-              src={logo}
-              alt={`project logo`}
-              className="project-logo"
-            />
-          </div>
-        </div>
-      )}
-
+</div>
       <div
         className={`project-grid ${isEven ? "padding-left" : "padding-right"}`}
       >
+        {logo && (
+          <div className="project-logo-container">
+            <div
+              className={`project-logo-wrapper ${
+                isEven ? "padding-left" : "padding-right"
+              }`}
+            >
+              <img
+                src={`${logo}_${theme}.png`}
+                alt={`project logo`}
+                className="project-logo"
+              />
+            </div>
+          </div>
+        )}
         {projects.map((proj, idx) => {
           const openLink = (e) => {
             e.stopPropagation();

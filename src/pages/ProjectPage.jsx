@@ -19,6 +19,18 @@ export default function ProjectPage() {
   const [layoutClass, setLayoutClass] = useState("row-layout");
   const touchStartX = useRef(null);
 
+  const normalizeImage = (img) => {
+    if (typeof img === "string") {
+      return { src: img, focalX: "center", focalY: "center", zoom: 1 };
+    }
+    return {
+      src: img.src,
+      focalX: img.focalX || "center",
+      focalY: img.focalY || "center",
+      zoom: img.zoom || 1,
+    };
+  };
+
   useEffect(() => {
     for (const company of projects) {
       for (const proj of company.projects) {
@@ -35,32 +47,37 @@ export default function ProjectPage() {
     if (!project) return;
 
     const currentImages = project.slides[currentSlide];
+    const imageCount = currentImages.length;
 
-    if (currentImages.length > 2) {
+    if (imageCount > 2) {
       setLayoutClass("double-column");
       return;
     }
 
-    Promise.all(
-      currentImages.map(
-        (src) =>
-          new Promise((resolve) => {
-            const img = new Image();
-            img.onload = () =>
-              resolve(img.width > img.height ? "landscape" : "portrait");
-            img.src = src;
-          })
-      )
-    ).then((orientations) => {
-      if (currentImages.length === 1) {
-        setLayoutClass("single-column");
-      } else if (currentImages.length === 2) {
+    if (imageCount === 1) {
+      setLayoutClass("single-column");
+      return;
+    }
+
+    if (imageCount === 2) {
+      Promise.all(
+        currentImages.map((img) => {
+          const { src } = normalizeImage(img);
+          return new Promise((resolve) => {
+            const image = new Image();
+            image.onload = () =>
+              resolve(image.width > image.height ? "landscape" : "portrait");
+            image.src = src;
+          });
+        })
+      ).then((orientations) => {
         const landscapeCount = orientations.filter(
           (o) => o === "landscape"
         ).length;
-        setLayoutClass(landscapeCount === 2 ? "column-layout" : "row-layout");
-      }
-    });
+        const layout = landscapeCount === 2 ? "column-layout" : "row-layout";
+        setLayoutClass(`two-images ${layout}`);
+      });
+    }
   }, [project, currentSlide]);
 
   useBackgroundPaths({
@@ -140,40 +157,48 @@ export default function ProjectPage() {
         className="project-page-wrapper"
         ref={(el) => (itemRefs.current[0] = el)}
       >
-        <h2 className="company-name">{parentCompany?.company}</h2>
+        <div className="project-heading">
+          <h2 className="company-name">{parentCompany?.company}</h2>
 
-        {parentCompany?.website && (
-          <a
-            className="website"
-            href={`https://${parentCompany.website}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {parentCompany.website}
-          </a>
-        )}
+          {parentCompany?.website && (
+            <a
+              className="website"
+              href={`https://${parentCompany.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {parentCompany.website}
+            </a>
+          )}
+        </div>
 
         <div className="project-page-grid">
-          {project.slides.map((group, slideIndex) =>
-            group.map((imgUrl, imgIndex) => (
-              <div
-                key={`${slideIndex}-${imgIndex}`}
-                className="project-thumb-wrapper"
-                onClick={() => openCarousel(slideIndex)}
-              >
-                <img
-                  src={imgUrl}
-                  alt={`Slide ${slideIndex + 1} - Image ${imgIndex + 1}`}
-                  className="project-thumb"
-                  style={{
-                    top: project.focalY || "auto",
-                    left: project.focalX || "auto",
-                    transform: `scale(${project.zoom || 1})`,
-                  }}
-                />
-              </div>
-            ))
-          )}
+          {project.slides.map((group, slideIndex) => (
+            <div key={slideIndex} className="project-slide-group">
+              {group.map((img, imgIndex) => {
+                const { src, focalX, focalY, zoom } = normalizeImage(img);
+                return (
+                  <div
+                    key={`${slideIndex}-${imgIndex}`}
+                    className="project-thumb-wrapper"
+                    onClick={() => openCarousel(slideIndex)}
+                  >
+                    <img
+                      src={src}
+                      alt={`Slide ${slideIndex + 1} - Image ${imgIndex + 1}`}
+                      className="project-thumb"
+                      style={{
+                        left: `${focalX}`,
+                        top: `${focalY}`,
+                        transform: `scale(${zoom})`,
+                        cursor: `pointer`,
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -194,14 +219,17 @@ export default function ProjectPage() {
               </button>
 
               <div className={`carousel-slide ${layoutClass}`}>
-                {project.slides[currentSlide].map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    className="carousel-image"
-                    alt={`Slide ${currentSlide + 1} - Item ${idx + 1}`}
-                  />
-                ))}
+                {project.slides[currentSlide].map((img, idx) => {
+                  const { src } = normalizeImage(img);
+                  return (
+                    <img
+                      key={idx}
+                      src={src}
+                      className="carousel-image"
+                      alt={`Slide ${currentSlide + 1} - Item ${idx + 1}`}
+                    />
+                  );
+                })}
               </div>
 
               {project.slides.length > 1 && (

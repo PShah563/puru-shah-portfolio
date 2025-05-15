@@ -8,7 +8,7 @@ import "../styles/Projects.css";
 function Projects() {
   const isMobile = window.innerWidth <= 768;
 
-  const allProjects = [...projects, ...personalProjects]; // Still needed for path drawing
+  const allProjects = [...projects, ...personalProjects];
   const itemRefs = useRef([]);
   const sectionRef = useRef();
   const svgRef = useRef();
@@ -20,14 +20,14 @@ function Projects() {
     sectionRef,
     itemRefs,
     projects: allProjects,
-    verticalStartOffset: isMobile ? 174.5 : 223,
-    verticalStartOffset2: isMobile ? 220 : 269.5,
+    verticalStartOffset: isMobile ? 210.5 : 223,
+    verticalStartOffset2: isMobile ? 256 : 269.5,
   });
 
   return (
     <section id="projects" className="projects-section" ref={sectionRef}>
       <div className="projects-heading">
-        <h1>PORTFOLIO</h1>
+        <h1>PROFESSIONAL PROJECTS</h1>
       </div>
 
       <svg
@@ -41,7 +41,6 @@ function Projects() {
         preserveAspectRatio="none"
       />
 
-      {/* Render main projects */}
       {projects.map((item, idx) => (
         <div
           key={`main-${idx}`}
@@ -58,12 +57,10 @@ function Projects() {
         </div>
       ))}
 
-      {/* Section heading */}
       <div className="projects-heading">
         <h1>PERSONAL PROJECTS</h1>
       </div>
 
-      {/* Render personal projects */}
       {personalProjects.map((item, pIdx) => {
         const globalIndex = projects.length + pIdx;
         return (

@@ -2,7 +2,7 @@ const personalProjects = [
   //Personal Projects
     {
     company: "Radiant Theaters",
-    logo: "https://i.imgur.com/FPtXfvP.png",
+    logo: "/radiant_theaters_logo",
     projects: [
       {
         title: "Card Front",
@@ -28,7 +28,7 @@ const personalProjects = [
   },
   {
     company: "Shah Airlines",
-    logo: "/shah_airlines_logo.png",
+    logo: "/shah_airlines_logo",
     projects: [
       {
         title: "Brochure Front",

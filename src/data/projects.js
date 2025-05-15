@@ -27,9 +27,7 @@ const projects = [
         thumbnail: "https://i.imgur.com/qXjZJP9.png",
         focalX: "-30%",
         zoom: "1.1",
-        slides: [
-            ["https://i.imgur.com/qXjZJP9.png"],
-          ],
+        slides: [["https://i.imgur.com/qXjZJP9.png"]],
       },
       {
         title: "GBCS Homepage Design",
@@ -37,9 +35,7 @@ const projects = [
         focalX: "30%",
         focalY: "45%",
         zoom: "3",
-        slides: [
-          ["https://i.imgur.com/SOipspE.png"],
-        ],
+        slides: [["https://i.imgur.com/SOipspE.png"]],
       },
       {
         title: "GBCS LinkedIn Banner Design",
@@ -47,9 +43,7 @@ const projects = [
         focalX: "-40%",
         focalY: "0",
         zoom: "1",
-        slides: [
-          ["https://i.imgur.com/1vr2rQd.png"],
-        ],
+        slides: [["https://i.imgur.com/1vr2rQd.png"]],
       },
       {
         title: "App Design",
@@ -58,9 +52,9 @@ const projects = [
         focalY: "-70%",
         zoom: "3",
         slides: [
-          ["https://i.imgur.com/GzWQXds.png"], 
-          ["https://i.imgur.com/dTrbR7u.png"], 
-          ["https://i.imgur.com/kYUeOSg.png"], 
+          ["https://i.imgur.com/GzWQXds.png"],
+          ["https://i.imgur.com/dTrbR7u.png"],
+          ["https://i.imgur.com/kYUeOSg.png"],
           ["https://i.imgur.com/bUBSxCl.png"],
         ],
         slug: "app-design",
@@ -79,7 +73,10 @@ const projects = [
         focalX: "-20%",
         zoom: "1.2",
         slides: [
-          ["https://i.imgur.com/j4EVLdb.png", "https://i.imgur.com/MqKDUKR.png"]
+          [
+            "https://i.imgur.com/j4EVLdb.png",
+            "https://i.imgur.com/MqKDUKR.png",
+          ],
         ],
       },
       {
@@ -89,12 +86,54 @@ const projects = [
         focalY: "5%",
         zoom: "1.3",
         slides: [
-          ["https://i.imgur.com/gYmQYLv.jpeg"],
-          ["https://i.imgur.com/4f3KIi9.jpeg"],
-          ["https://i.imgur.com/mmZLRwv.jpeg"],
-          ["https://i.imgur.com/D36GlnB.jpeg"],
-          ["https://i.imgur.com/R3BQ2B1.jpeg"],
-          ["https://i.imgur.com/J3RLV8N.jpeg"],
+          [
+            {
+              src: "https://i.imgur.com/gYmQYLv.jpeg",
+              focalX: "10%",
+              focalY: "5%",
+              zoom: "1.4",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/4f3KIi9.jpeg",
+              focalX: "10%",
+              focalY: "5%",
+              zoom: "1.4",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/mmZLRwv.jpeg",
+              focalX: "10%",
+              focalY: "5%",
+              zoom: "1.4",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/D36GlnB.jpeg",
+              focalX: "10%",
+              focalY: "5%",
+              zoom: "1.4",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/R3BQ2B1.jpeg",
+              focalX: "10%",
+              focalY: "15%",
+              zoom: "1.4",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/J3RLV8N.jpeg",
+              focalX: "10%",
+              focalY: "5%",
+              zoom: "1.4",
+            },
+          ],
         ],
         slug: "blue-like-me-flyers",
         link: "/projects/blue-like-me-flyers",
@@ -106,8 +145,32 @@ const projects = [
         focalY: "-43%",
         zoom: "2.2",
         slides: [
-          ["https://i.imgur.com/JVks3MJ.png", "https://i.imgur.com/4TRtG9R.png"],
-          ["https://i.imgur.com/CYjO1wU.png", "https://i.imgur.com/Q3n0pIe.png"],
+          [
+            {
+              src: "https://i.imgur.com/JVks3MJ.png",
+              focalX: "7%",
+              focalY: "0%",
+              zoom: "1.55",
+            },
+            {
+              src: "https://i.imgur.com/4TRtG9R.png",
+              focalX: "10%",
+              zoom: "1.5",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/CYjO1wU.png",
+              focalX: "9%",
+              focalY: "5%",
+              zoom: "1.2",
+            },
+            {
+              src: "https://i.imgur.com/Q3n0pIe.png",
+              focalX: "10%",
+              zoom: "1.5",
+            },
+          ],
         ],
         slug: "blue-like-me-tees",
         link: "/projects/blue-like-me-tees",
@@ -119,9 +182,36 @@ const projects = [
         focalY: "0",
         zoom: "1",
         slides: [
-          ["https://i.imgur.com/aiubD0t.png", "https://i.imgur.com/mKph4OX.png"],
-          ["https://i.imgur.com/hxM1DIs.png", "https://i.imgur.com/ypgbKWj.jpeg"],
-          ["https://i.imgur.com/kRt454W.png", "https://i.imgur.com/s2g6UbE.jpeg"],
+          [
+            {
+              src: "https://i.imgur.com/aiubD0t.png",
+              focalX: "-70%",
+            },
+            {
+              src: "https://i.imgur.com/mKph4OX.png",
+              focalX: "-35%",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/hxM1DIs.png",
+              focalX: "-70%",
+            },
+            {
+              src: "https://i.imgur.com/ypgbKWj.jpeg",
+              focalX: "-35%",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/kRt454W.png",
+              focalX: "-70%",
+            },
+            {
+              src: "https://i.imgur.com/s2g6UbE.jpeg",
+              focalX: "-35%",
+            },
+          ],
         ],
         slug: "blue-like-me-yoga-mats",
         link: "/projects/blue-like-me-yoga-mats",
@@ -135,9 +225,10 @@ const projects = [
       {
         title: "Flyer",
         thumbnail: "https://i.imgur.com/9Aq1nP2.png",
-        slides: [
-          ["https://i.imgur.com/9Aq1nP2.png"],
-        ],
+        focalX: "10%",
+        focalY: "0",
+        zoom: "1.35",
+        slides: [["https://i.imgur.com/9Aq1nP2.png"]],
       },
     ],
   },
