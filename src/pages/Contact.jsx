@@ -43,12 +43,12 @@ export default function Contact() {
           <form
             name="contact"
             method="POST"
+            action="/thank-you"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             className="contact-form"
           >
             <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="redirect" value="/thank-you" />
             <p className="hidden">
               <label>
                 Don’t fill this out: <input name="bot-field" />
