@@ -26,6 +26,27 @@
     <div class="spinner"></div>
   </div>
   <div id="root"></div>
+    <form name="contact" method="POST" action="/thank-you" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form" style="display:none;">
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+    <p>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+    </p>
+    <p>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="4" required></textarea>
+    </p>
+    <p>
+      <button type="submit" class="cta-btn">Send Message</button>
+    </p>
+  </form>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
