@@ -88,6 +88,6 @@
     position: relative;
     display: block;
     width: 100%;
-    color: var(--bg-color);
+    color: var(--heading-color);
   }
 }

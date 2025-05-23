@@ -9,7 +9,7 @@
 }
 
 .light {
-  --bg-color: #ffe6c8;
+  --bg-color: linear-gradient(150deg, #ffe6c8, #d8c3a9);
   --bg-logo: #d8c3a9;
   --nav-color: #3d3d3d;
   --heading-bg: #3d3d3d;
@@ -18,9 +18,11 @@
   --heading-color: #ffe6c8;
   --accent-color: #947f57;
   --accent-hover: #64563b;
+  --icon-color: #ffe6c8;
 }
 
 .dark {
+  --bg-color: linear-gradient(150deg, #3d3d3d, #333);
   --bg-color: #3d3d3d;
   --bg-logo: #333;
   --nav-color: #b8a690;
@@ -30,12 +32,13 @@
   --heading-color: #333;
   --accent-color: #947f57;
   --accent-hover: #64563b;
+  --icon-color: #3d3d3d;
 }
 
 body {
   margin: 0;
   font-family: var(--font-stack);
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--font-color);
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
@@ -79,4 +82,26 @@ button:hover {
   width: 100vw;
   height: fit-content;
   min-height: 100vh;
+}
+
+.app-wrapper {
+  will-change: opacity;
+  opacity: 0;
+}
+
+.app-wrapper.loading {
+  opacity: 0;
+}
+
+.app-wrapper.loaded {
+  animation: fadeInContent 1s ease-in 0.1s forwards;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -18,7 +18,7 @@
   text-align: center;
   width: fit-content;
   border-radius: 24px;
-  border: 3px solid var(--bg-color);
+  border: 3px solid var(--heading-color);
   padding: 6px 15px 4px;
   font-family: 'Roc Grotesk', sans-serif;
   line-height: normal;

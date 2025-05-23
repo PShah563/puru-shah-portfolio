@@ -17,6 +17,7 @@
   margin-top: 8.2rem;
   padding: 5rem;
   overflow: hidden;
+  animation: logoGrow 3s ease forwards;
 }
 
 .logo-static {
@@ -91,6 +92,15 @@
   left: 18.5%;
   font-weight: 550;
   letter-spacing: .15rem;
+}
+
+@keyframes logoGrow {
+  from {
+    scale: 0.9
+  }
+  to {
+    scale: 1
+  }
 }
 
 @media(max-width: 768px) {

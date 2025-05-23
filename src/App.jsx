@@ -14,6 +14,7 @@ import "./fonts/fonts.css";
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showLoader, setShowLoader] = useState(true);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     const updateSize = () => {
@@ -26,7 +27,7 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
   const timeout = setTimeout(() => {
     const initialLoader = document.getElementById("initial-loader");
     if (initialLoader) {
@@ -34,9 +35,13 @@ function App() {
       initialLoader.style.transition = "opacity 0.4s ease";
       setTimeout(() => {
         initialLoader.remove();
+        setShowLoader(false);
+        setFadeIn(true);
       }, 200);
+    } else {
+      setShowLoader(false);
+      setFadeIn(true);
     }
-    setShowLoader(false);
   }, 300);
 
   return () => clearTimeout(timeout);
@@ -44,7 +49,7 @@ function App() {
 
   return (
     <>
-      <div className={`app-wrapper ${showLoader ? "loading" : "loaded"}`}>
+      <div className={`app-wrapper ${fadeIn ? "loaded" : "loading"}`}>
         <Router>
           <Navbar isMobile={isMobile} />
           {!isMobile && <ThemeToggle />}
