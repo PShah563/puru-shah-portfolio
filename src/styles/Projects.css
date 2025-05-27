@@ -10,6 +10,10 @@
     font-size: 1.7rem;
 }
 
+.margin-top {
+    margin-top: 3rem;
+}
+
 .projects-heading h1 {
     font-family: 'ITC Bauhaus', sans-serif;
     margin: 0;
@@ -24,8 +28,7 @@
 
 .project-wrapper {
     position: relative;
-    margin: 1rem auto;
-    padding: 2rem 0;
+    padding: 2rem 0 0;
     width: 100vw;
     z-index: 2;
 }

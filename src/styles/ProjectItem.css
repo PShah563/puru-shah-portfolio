@@ -30,16 +30,17 @@
   padding: 6px 15px 4px;
   font-family: 'Roc Grotesk', sans-serif;
   line-height: normal;
-  margin: 0 0 1rem;
+  margin: 0 0 36px;
 }
 
 .website {
   display: block;
   text-align: center;
   color: var(--heading-color);
-  font-size: .85rem;
+  font-size: .8rem;
   line-height: normal;
   width: fit-content;
+  margin: 0;
 }
 
 .website:hover {
@@ -48,7 +49,7 @@
 
 .project-logo-container {
   position: absolute;
-  top: 85px;
+  top: 105px;
   left: 3%;
   width: 12vw;
   height: 12vh;
@@ -69,11 +70,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 7rem 0 0;
+  padding: 40px 0 0;
   justify-content: center;
   max-width: 60vw;
   width: fit-content;
   margin: 0 auto;
+}
+
+.project-grid.has-logo {
+  padding: 9rem 0 0;
 }
 
 .project-link {
@@ -128,6 +133,7 @@
   .project-item {
     max-width: calc(100% - var(--inset2) * 2);
   }
+
   .project-logo-wrapper {
     margin: 16% 15%;
     padding: 0;

@@ -9,6 +9,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
   const touchStartX = useRef(null);
   const isEven = index % 2 === 0;
   const { theme } = useTheme();
+  const hasLogo = logo !== "";
 
   const openCarousel = (project) => {
     setCarouselProject(project);
@@ -68,7 +69,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
             {website}
           </a>
         ) : (
-          <p>&nbsp;</p>
+          <p className="website">&nbsp;</p>
         )}
       </div>
       {logo && (
@@ -80,7 +81,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
           />
         </div>
       )}
-      <div className={`project-grid`}>
+      <div className={`project-grid ${hasLogo ? 'has-logo' : ''}`}>
         {projects.map((proj, idx) => {
           const openLink = (e) => {
             e.stopPropagation();

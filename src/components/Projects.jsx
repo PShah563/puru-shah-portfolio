@@ -14,8 +14,8 @@ function Projects() {
   const headingRef = useRef();
 
   const headingHeight = headingRef.current?.offsetHeight || 60;
-  const verticalStartOffset = headingHeight + 69.5;
-  const verticalStartOffset2 = headingHeight + 115.5;
+  const verticalStartOffset = headingHeight + 54.5;
+  const verticalStartOffset2 = headingHeight + 121;
 
   const [dimensions, setDimensions] = useState({ width: window.innerWidth });
 
@@ -71,7 +71,7 @@ function Projects() {
       ))}
 
       <div className="projects-heading-wrapper">
-        <div className="projects-heading">
+        <div className="projects-heading margin-top">
           <h1>PERSONAL PROJECTS</h1>
         </div>
       </div>

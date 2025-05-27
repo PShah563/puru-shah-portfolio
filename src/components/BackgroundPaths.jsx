@@ -9,7 +9,7 @@ export function useBackgroundPaths({
   verticalStartOffset = 223,
   verticalStartOffset2 = 269.5,
   headingOffset = 55,
-  headingOffset2 = 101,
+  headingOffset2 = 121,
   finalVerticalOffset = 70,
 }) {
   useEffect(() => {
