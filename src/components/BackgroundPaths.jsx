@@ -10,7 +10,7 @@ export function useBackgroundPaths({
   verticalStartOffset2 = 269.5,
   headingOffset = 55,
   headingOffset2 = 121,
-  finalVerticalOffset = 70,
+  finalVerticalOffset = 55,
 }) {
   useEffect(() => {
     const drawPaths = () => {

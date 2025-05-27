@@ -2,7 +2,6 @@ const personalProjects = [
   //Personal Projects
     {
     company: "Radiant Theaters",
-    logo: "/radiant_theaters_logo",
     projects: [
       {
         title: "Card Front",
@@ -28,7 +27,6 @@ const personalProjects = [
   },
   {
     company: "Shah Airlines",
-    logo: "/shah_airlines_logo",
     projects: [
       {
         title: "Brochure Front",

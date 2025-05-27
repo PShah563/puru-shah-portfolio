@@ -5,6 +5,89 @@ const projects = [
     website: "GBCSGroup.com",
     projects: [
       {
+        title: "RFP",
+        thumbnail: "https://i.imgur.com/utKRMUR.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/utKRMUR.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/UUHqz4F.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/Ev5pB2p.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/GDnteWR.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/ORom89D.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/AIE0jFH.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/Rvy9bv9.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/hJqstv0.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+          [
+            {
+              src: "https://i.imgur.com/AkpgeGS.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            }
+          ],
+        ],
+        slug: "gbcs-university-redesign",
+        link: "/projects/gbcs-university-redesign",
+      },
+      {
         title: "GBCS University Redesign",
         thumbnail: "https://i.imgur.com/g4NB22v.png",
         focalX: "20%",

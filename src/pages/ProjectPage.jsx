@@ -87,7 +87,7 @@ export default function ProjectPage() {
     itemRefs,
     projects: project ? [project] : [],
     verticalStartOffset: 122,
-    verticalStartOffset2: 168,
+    verticalStartOffset2: 188,
   });
 
   const openCarousel = (index) => {
