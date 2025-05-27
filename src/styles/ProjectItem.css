@@ -238,7 +238,7 @@
   font-size: 5rem;
   background: none;
   border: none;
-  color: var(--heading-color);
+  color: #ffffff9f;
   cursor: pointer;
   transition: color 0.3s ease;
 }
