@@ -27,7 +27,59 @@ const projects = [
         thumbnail: "https://i.imgur.com/qXjZJP9.png",
         focalX: "-30%",
         zoom: "1.1",
-        slides: [["https://i.imgur.com/qXjZJP9.png"]],
+        slides: [
+          [
+            {
+              src:"https://i.imgur.com/4zX9mfk.jpeg",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/r8r81KD.jpeg",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/TN6HAPR.png",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/B7SJ5hN.png",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/V3lirnU.png",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/wLuFulh.png",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+          [
+            {
+              src:"https://i.imgur.com/b3OMHEv.png",
+              focalX: "-30%",
+              zoom: "1.1",
+            }
+          ],
+        ],
+        slug: "ceo-portfolio-design",
+        link: "/projects/ceo-portfolio-design",
       },
       {
         title: "GBCS Homepage Design",

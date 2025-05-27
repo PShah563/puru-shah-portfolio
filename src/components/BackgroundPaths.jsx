@@ -34,12 +34,16 @@ export function useBackgroundPaths({
       let inset, inset2;
 
       if (containerWidth <= 768) {
-        inset = Math.min(Math.max(containerWidth * 0.08, 20), 60);
-        inset2 = Math.min(Math.max(containerWidth * 0.1, 16), 48);
+        inset = 10;
+        inset2 = 10;
       } else {
         inset = Math.min(Math.max(containerWidth * 0.2, 40), 1500);
         inset2 = Math.min(Math.max(containerWidth * 0.165, 32), 1000);
       }
+
+      document.documentElement.style.setProperty('--inset', `${inset}px`);
+      document.documentElement.style.setProperty('--inset2', `${inset2}px`);
+
 
       const radius = 32;
       const leftX = inset;

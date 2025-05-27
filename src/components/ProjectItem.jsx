@@ -55,41 +55,32 @@ function ProjectItem({ company, projects, website, logo, index }) {
   }, [carouselProject]);
 
   return (
-    <div className="project-item">
+    <div className={`project-item ${isEven ? "even" : "odd"}`}>
       <div className="project-heading">
-      <h2 className={`company-name ${isEven ? "margin-left" : "margin-right"}`}>{company}</h2>
-      {website ? (
-        <a
-          className={`website ${isEven ? "margin-left" : "margin-right"}`}
-          href={`https://${website}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {website}
-        </a>
-        
-      ) : (
-        <p>&nbsp;</p>
-      )}
-</div>
-      <div
-        className={`project-grid ${isEven ? "padding-left" : "padding-right"}`}
-      >
-        {logo && (
-          <div className="project-logo-container">
-            <div
-              className={`project-logo-wrapper ${
-                isEven ? "padding-left" : "padding-right"
-              }`}
-            >
-              <img
-                src={`${logo}_${theme}.png`}
-                alt={`project logo`}
-                className="project-logo"
-              />
-            </div>
-          </div>
+        <h2 className={`company-name`}>{company}</h2>
+        {website ? (
+          <a
+            className={`website`}
+            href={`https://${website}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {website}
+          </a>
+        ) : (
+          <p>&nbsp;</p>
         )}
+      </div>
+      {logo && (
+        <div className={`project-logo-container`}>
+          <img
+            src={`${logo}_${theme}.png`}
+            alt={`project logo`}
+            className="project-logo"
+          />
+        </div>
+      )}
+      <div className={`project-grid`}>
         {projects.map((proj, idx) => {
           const openLink = (e) => {
             e.stopPropagation();

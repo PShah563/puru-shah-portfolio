@@ -1,10 +1,18 @@
 .project-item {
-  margin: 0;
-  width: 100%;
+  position: relative;
+  max-width: calc(96.5% - var(--inset2) * 2);
+}
+
+.even {
+  margin-left: var(--inset);
+}
+
+.odd {
+  margin-left: var(--inset2);
 }
 
 .project-heading {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,27 +48,20 @@
 
 .project-logo-container {
   position: absolute;
-  left: 0;
-  top: -53%;
-  width: 100%;
-  height: 100%;
-}
-
-.project-logo-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 3rem;
-  width: 100%;
-  height: 100%;
+  top: 85px;
+  left: 3%;
+  width: 12vw;
+  height: 12vh;
 }
 
 .project-logo {
+  display: block;
   width: auto;
   height: auto;
-  max-height: 15vh;
-  max-width: 15vw;
-  border-radius: var(--border-radius);
+  max-height: 12vh;
+  max-width: 12vw;
+  object-fit: contain;
+  object-position: top left;
 }
 
 .project-grid {
@@ -68,27 +69,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 7rem 1rem 1rem;
+  padding: 7rem 0 0;
   justify-content: center;
   max-width: 60vw;
   width: fit-content;
   margin: 0 auto;
-}
-
-.padding-left {
-  padding-left: 5.5rem;
-}
-
-.padding-right {
-  padding-right: 5.5rem;
-}
-
-.margin-left {
-  margin-left: 5.5rem;
-}
-
-.margin-right {
-  margin-right: 5.5rem;
 }
 
 .project-link {
@@ -140,22 +125,9 @@
 
 
 @media(max-width: 768px) {
-  .padding-left {
-    padding-left: .7rem;
+  .project-item {
+    max-width: calc(100% - var(--inset2) * 2);
   }
-
-  .padding-right {
-    padding-right: .7rem;
-  }
-
-  .margin-left {
-    margin-left: .7rem;
-  }
-
-  .margin-right {
-    margin-right: .7rem;
-  }
-
   .project-logo-wrapper {
     margin: 16% 15%;
     padding: 0;
