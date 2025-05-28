@@ -3,6 +3,7 @@ import ProjectItem from "./ProjectItem";
 import projects from "../data/projects";
 import personalProjects from "../data/personalProjects";
 import { useBackgroundPaths } from "./BackgroundPaths";
+import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import "../styles/Projects.css";
 
 function Projects() {
@@ -60,13 +61,15 @@ function Projects() {
           className="project-wrapper"
           ref={(el) => (itemRefs.current[idx] = el)}
         >
-          <ProjectItem
-            company={item.company}
-            website={item.website || ""}
-            logo={item.logo || ""}
-            projects={item.projects}
-            index={idx}
-          />
+          <FadeInWhenVisible>
+            <ProjectItem
+              company={item.company}
+              website={item.website || ""}
+              logo={item.logo || ""}
+              projects={item.projects}
+              index={idx}
+            />
+          </FadeInWhenVisible>
         </div>
       ))}
 
@@ -84,13 +87,15 @@ function Projects() {
             className="project-wrapper"
             ref={(el) => (itemRefs.current[globalIndex] = el)}
           >
-            <ProjectItem
-              company={item.company}
-              website={item.website || ""}
-              logo={item.logo || ""}
-              projects={item.projects}
-              index={globalIndex}
-            />
+            <FadeInWhenVisible>
+              <ProjectItem
+                company={item.company}
+                website={item.website || ""}
+                logo={item.logo || ""}
+                projects={item.projects}
+                index={globalIndex}
+              />
+            </FadeInWhenVisible>
           </div>
         );
       })}
