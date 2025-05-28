@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function FadeInWhenVisible({ children, delay = 0, duration = 0.4, yOffset = 60 }) {
+export default function FadeInWhenVisible({ children, delay = 0, duration = 1, yOffset = 20 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: yOffset }}

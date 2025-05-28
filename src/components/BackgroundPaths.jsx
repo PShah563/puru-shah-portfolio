@@ -160,9 +160,9 @@ export function useBackgroundPaths({
         },${currentY1}`;
         currentX1 += finalDir;
 
-        path1 += `H ${tailSideX - radius}`;
-        path1 += `A ${radius} ${radius} 0 0 1 ${
-          tailSideX + finalDir
+        path1 += `H ${tailSideX === leftX ? tailSideX + radius : tailSideX - radius}`;
+        path1 += `A ${radius} ${radius} 0 0 ${sweep} ${
+          tailSideX - finalDir
         },${currentY1 + radius}`;
         path1 += `V ${currentY1 + verticalStartOffset * 20}`;
       };
@@ -178,8 +178,8 @@ export function useBackgroundPaths({
         },${currentY2}`;
         currentX2 += finalDir;
 
-        path2 += `H ${tailSideX + radius}`;
-        path2 += `A ${radius} ${radius} 0 0 0 ${
+        path2 += `H ${tailSideX === left2X ? tailSideX + radius : tailSideX - radius}`;
+        path2 += `A ${radius} ${radius} 0 0 ${sweep} ${
           tailSideX + finalDir
         },${currentY2 + radius}`;
         path2 += `V ${currentY2 + verticalStartOffset2 * 20}`;

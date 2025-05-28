@@ -5,89 +5,6 @@ const projects = [
     website: "GBCSGroup.com",
     projects: [
       {
-        title: "RFP",
-        thumbnail: "https://i.imgur.com/utKRMUR.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [
-          [
-            {
-              src: "https://i.imgur.com/utKRMUR.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/UUHqz4F.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/Ev5pB2p.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/GDnteWR.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/ORom89D.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/AIE0jFH.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/Rvy9bv9.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/hJqstv0.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-          [
-            {
-              src: "https://i.imgur.com/AkpgeGS.jpeg",
-              focalX: "20%",
-              focalY: "5%",
-              zoom: "1.7",
-            }
-          ],
-        ],
-        slug: "gbcs-university-redesign",
-        link: "/projects/gbcs-university-redesign",
-      },
-      {
         title: "GBCS University Redesign",
         thumbnail: "https://i.imgur.com/g4NB22v.png",
         focalX: "20%",
@@ -113,52 +30,52 @@ const projects = [
         slides: [
           [
             {
-              src:"https://i.imgur.com/4zX9mfk.jpeg",
+              src: "https://i.imgur.com/4zX9mfk.jpeg",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/r8r81KD.jpeg",
+              src: "https://i.imgur.com/r8r81KD.jpeg",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/TN6HAPR.png",
+              src: "https://i.imgur.com/TN6HAPR.png",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/B7SJ5hN.png",
+              src: "https://i.imgur.com/B7SJ5hN.png",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/V3lirnU.png",
+              src: "https://i.imgur.com/V3lirnU.png",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/wLuFulh.png",
+              src: "https://i.imgur.com/wLuFulh.png",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
           [
             {
-              src:"https://i.imgur.com/b3OMHEv.png",
+              src: "https://i.imgur.com/b3OMHEv.png",
               focalX: "-30%",
               zoom: "1.1",
-            }
+            },
           ],
         ],
         slug: "ceo-portfolio-design",
@@ -350,6 +267,75 @@ const projects = [
         ],
         slug: "blue-like-me-yoga-mats",
         link: "/projects/blue-like-me-yoga-mats",
+      },
+    ],
+  },
+  //RFP Design
+  {
+    company: "RFP Design",
+    projects: [
+      {
+        thumbnail: "https://i.imgur.com/utKRMUR.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/utKRMUR.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/UUHqz4F.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/UUHqz4F.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/Ev5pB2p.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/Ev5pB2p.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/GDnteWR.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/GDnteWR.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/ORom89D.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/ORom89D.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/AIE0jFH.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/AIE0jFH.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/Rvy9bv9.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/Rvy9bv9.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/hJqstv0.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/hJqstv0.jpeg"]],
+      },
+      {
+        thumbnail: "https://i.imgur.com/AkpgeGS.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [["https://i.imgur.com/AkpgeGS.jpeg"]],
       },
     ],
   },
