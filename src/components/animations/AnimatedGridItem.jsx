@@ -7,7 +7,7 @@ export default function AnimatedGridItem({
   index,
   className = "",
   baseScale = 1,
-  hoverScale = 1.25,
+  hoverScale = 1.15,
   transition = { type: "spring", stiffness: 170, damping: 20 },
   distance = 20,
   style = {},
