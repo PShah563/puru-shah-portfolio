@@ -128,7 +128,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
           />
         </div>
       )}
-      <AnimatedGridProvider>
+      <AnimatedGridProvider gridId={`grid-${index}`}>
         <div className={`project-grid ${hasLogo ? "has-logo" : ""}`}>
           {projects.map((proj, idx) => {
             const openLink = (e) => {
@@ -145,7 +145,6 @@ function ProjectItem({ company, projects, website, logo, index }) {
               <AnimatedGridItem
                 key={idx}
                 index={idx}
-                gridId={index}
                 className="project-link"
                 onClick={proj.link ? openLink : handleClick}
                 style={{ cursor: proj.link ? "pointer" : "zoom-in" }}
