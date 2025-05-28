@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useRef } from "react";
 
 const AnimatedGridContext = createContext();
 
-export function AnimatedGridProvider({ gridId, children }) {
+export function AnimatedGridProvider({ gridId = 0, children }) {
   const [hovered, setHovered] = useState({ gridId: null, index: null });
   const itemRefs = useRef({});
 

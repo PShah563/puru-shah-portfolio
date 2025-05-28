@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { useBackgroundPaths } from "../components/BackgroundPaths";
 import projects from "../data/projects";
+import { AnimatedGridProvider } from "../contexts/AnimatedGridContext";
+import AnimatedGridItem from "../components/animations/AnimatedGridItem";
 import "../styles/ProjectPage.css";
 
 export default function ProjectPage() {
@@ -172,34 +174,40 @@ export default function ProjectPage() {
           )}
         </div>
 
-        <div className="project-page-grid">
-          {project.slides.map((group, slideIndex) => (
-            <div key={slideIndex} className="project-slide-group">
-              {group.map((img, imgIndex) => {
-                const { src, focalX, focalY, zoom } = normalizeImage(img);
-                return (
-                  <div
-                    key={`${slideIndex}-${imgIndex}`}
-                    className="project-thumb-wrapper"
-                    onClick={() => openCarousel(slideIndex)}
-                  >
-                    <img
-                      src={src}
-                      alt={`Slide ${slideIndex + 1} - Image ${imgIndex + 1}`}
-                      className="project-thumb"
-                      style={{
-                        left: `${focalX}`,
-                        top: `${focalY}`,
-                        transform: `scale(${zoom})`,
-                        cursor: `pointer`,
-                      }}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-        </div>
+        <AnimatedGridProvider>
+          <div className="project-page-grid">
+            {project.slides.map((group, slideIndex) => (
+              <AnimatedGridItem 
+                key={slideIndex} 
+                index={slideIndex}
+                className="project-slide-group"
+              >
+                {group.map((img, imgIndex) => {
+                  const { src, focalX, focalY, zoom } = normalizeImage(img);
+                  return (
+                    <div
+                      key={`${slideIndex}-${imgIndex}`}
+                      className="project-thumb-wrapper"
+                      onClick={() => openCarousel(slideIndex)}
+                    >
+                      <img
+                        src={src}
+                        alt={`Slide ${slideIndex + 1} - Image ${imgIndex + 1}`}
+                        className="project-thumb"
+                        style={{
+                          left: `${focalX}`,
+                          top: `${focalY}`,
+                          transform: `scale(${zoom})`,
+                          cursor: `pointer`,
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </AnimatedGridItem>
+            ))}
+          </div>
+        </AnimatedGridProvider>
       </div>
 
       {carouselOpen &&
