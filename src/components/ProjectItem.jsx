@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../contexts/ThemeContext";
+import { AnimatedGridProvider } from "../contexts/AnimatedGridContext";
+import AnimatedGridItem from "./animations/AnimatedGridItem";
+
 import "../styles/ProjectItem.css";
 
-// Optional helper if needed
 function normalizeImage(src) {
   if (typeof src === "string") return { src };
-  return src; // assuming { src, focalX, focalY, zoom }
+  return src;
 }
 
 function ProjectItem({ company, projects, website, logo, index }) {
@@ -33,7 +35,9 @@ function ProjectItem({ company, projects, website, logo, index }) {
   const prevSlide = () => {
     if (!carouselProject) return;
     setCurrentSlide(
-      (prev) => (prev - 1 + carouselProject.slides.length) % carouselProject.slides.length
+      (prev) =>
+        (prev - 1 + carouselProject.slides.length) %
+        carouselProject.slides.length
     );
   };
 
@@ -88,7 +92,9 @@ function ProjectItem({ company, projects, website, logo, index }) {
           });
         })
       ).then((orientations) => {
-        const landscapeCount = orientations.filter((o) => o === "landscape").length;
+        const landscapeCount = orientations.filter(
+          (o) => o === "landscape"
+        ).length;
         const layout = landscapeCount === 2 ? "column-layout" : "row-layout";
         setLayoutClass(`two-images ${layout}`);
       });
@@ -122,48 +128,51 @@ function ProjectItem({ company, projects, website, logo, index }) {
           />
         </div>
       )}
+      <AnimatedGridProvider>
+        <div className={`project-grid ${hasLogo ? "has-logo" : ""}`}>
+          {projects.map((proj, idx) => {
+            const openLink = (e) => {
+              e.stopPropagation();
+              if (proj.link) {
+                window.location.href = proj.link;
+              }
+            };
+            const handleClick = () => {
+              openCarousel(proj);
+            };
 
-      <div className={`project-grid ${hasLogo ? "has-logo" : ""}`}>
-        {projects.map((proj, idx) => {
-          const openLink = (e) => {
-            e.stopPropagation();
-            if (proj.link) {
-              window.location.href = proj.link;
-            }
-          };
-          const handleClick = () => {
-            openCarousel(proj);
-          };
-
-          return (
-            <div
-              key={idx}
-              className="project-link"
-              onClick={proj.link ? openLink : handleClick}
-              style={{ cursor: proj.link ? "pointer" : "zoom-in" }}
-            >
-              <div className="project-thumb-wrapper">
-                <img
-                  src={proj.thumbnail}
-                  alt={proj.title}
-                  className="project-thumb"
-                  style={{
-                    top: proj.focalY || "auto",
-                    left: proj.focalX || "auto",
-                    transform: `scale(${proj.zoom || 1})`,
-                  }}
-                />
-              </div>
-              <span
-                className={`project-title ${proj.link ? "haslink" : ""}`}
-                onClick={openLink}
+            return (
+              <AnimatedGridItem
+                key={idx}
+                index={idx}
+                gridId={index}
+                className="project-link"
+                onClick={proj.link ? openLink : handleClick}
+                style={{ cursor: proj.link ? "pointer" : "zoom-in" }}
               >
-                {proj.title}
-              </span>
-            </div>
-          );
-        })}
-      </div>
+                <div className="project-thumb-wrapper">
+                  <img
+                    src={proj.thumbnail}
+                    alt={proj.title}
+                    className="project-thumb"
+                    style={{
+                      top: proj.focalY || "auto",
+                      left: proj.focalX || "auto",
+                      transform: `scale(${proj.zoom || 1})`,
+                    }}
+                  />
+                </div>
+                <span
+                  className={`project-title ${proj.link ? "haslink" : ""}`}
+                  onClick={openLink}
+                >
+                  {proj.title}
+                </span>
+              </AnimatedGridItem>
+            );
+          })}
+        </div>
+      </AnimatedGridProvider>
 
       {carouselProject &&
         createPortal(
@@ -173,7 +182,10 @@ function ProjectItem({ company, projects, website, logo, index }) {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <div className="carousel-content" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="carousel-content"
+              onClick={(e) => e.stopPropagation()}
+            >
               {carouselProject.slides.length > 1 && (
                 <button onClick={prevSlide} className="carousel-arrow left">
                   ‹
