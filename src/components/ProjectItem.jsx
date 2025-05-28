@@ -3,9 +3,16 @@ import { createPortal } from "react-dom";
 import { useTheme } from "../contexts/ThemeContext";
 import "../styles/ProjectItem.css";
 
+// Optional helper if needed
+function normalizeImage(src) {
+  if (typeof src === "string") return { src };
+  return src; // assuming { src, focalX, focalY, zoom }
+}
+
 function ProjectItem({ company, projects, website, logo, index }) {
   const [carouselProject, setCarouselProject] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [layoutClass, setLayoutClass] = useState("row-layout");
   const touchStartX = useRef(null);
   const isEven = index % 2 === 0;
   const { theme } = useTheme();
@@ -26,9 +33,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
   const prevSlide = () => {
     if (!carouselProject) return;
     setCurrentSlide(
-      (prev) =>
-        (prev - 1 + carouselProject.slides.length) %
-        carouselProject.slides.length
+      (prev) => (prev - 1 + carouselProject.slides.length) % carouselProject.slides.length
     );
   };
 
@@ -55,13 +60,48 @@ function ProjectItem({ company, projects, website, logo, index }) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [carouselProject]);
 
+  useEffect(() => {
+    if (!carouselProject || !carouselProject.slides[currentSlide]) return;
+
+    const currentImages = carouselProject.slides[currentSlide];
+    const imageCount = currentImages.length;
+
+    if (imageCount > 2) {
+      setLayoutClass("double-column");
+      return;
+    }
+
+    if (imageCount === 1) {
+      setLayoutClass("single-column");
+      return;
+    }
+
+    if (imageCount === 2) {
+      Promise.all(
+        currentImages.map((img) => {
+          const { src } = normalizeImage(img);
+          return new Promise((resolve) => {
+            const image = new Image();
+            image.onload = () =>
+              resolve(image.width > image.height ? "landscape" : "portrait");
+            image.src = src;
+          });
+        })
+      ).then((orientations) => {
+        const landscapeCount = orientations.filter((o) => o === "landscape").length;
+        const layout = landscapeCount === 2 ? "column-layout" : "row-layout";
+        setLayoutClass(`two-images ${layout}`);
+      });
+    }
+  }, [carouselProject, currentSlide]);
+
   return (
     <div className={`project-item ${isEven ? "even" : "odd"}`}>
       <div className="project-heading">
-        <h2 className={`company-name`}>{company}</h2>
+        <h2 className="company-name">{company}</h2>
         {website ? (
           <a
-            className={`website`}
+            className="website"
             href={`https://${website}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -72,16 +112,18 @@ function ProjectItem({ company, projects, website, logo, index }) {
           <p className="website">&nbsp;</p>
         )}
       </div>
+
       {logo && (
-        <div className={`project-logo-container`}>
+        <div className="project-logo-container">
           <img
             src={`${logo}_${theme}.png`}
-            alt={`project logo`}
+            alt="project logo"
             className="project-logo"
           />
         </div>
       )}
-      <div className={`project-grid ${hasLogo ? 'has-logo' : ''}`}>
+
+      <div className={`project-grid ${hasLogo ? "has-logo" : ""}`}>
         {projects.map((proj, idx) => {
           const openLink = (e) => {
             e.stopPropagation();
@@ -131,23 +173,14 @@ function ProjectItem({ company, projects, website, logo, index }) {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <div
-              className="carousel-content"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="carousel-content" onClick={(e) => e.stopPropagation()}>
               {carouselProject.slides.length > 1 && (
                 <button onClick={prevSlide} className="carousel-arrow left">
                   ‹
                 </button>
               )}
 
-              <div
-                className={`carousel-slide ${
-                  carouselProject.slides[currentSlide].length <= 2
-                    ? "single-column"
-                    : "double-column"
-                }`}
-              >
+              <div className={`carousel-slide ${layoutClass}`}>
                 {carouselProject.slides[currentSlide].map((img, idx) => (
                   <img
                     key={idx}

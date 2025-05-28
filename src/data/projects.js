@@ -112,6 +112,89 @@ const projects = [
         slug: "app-design",
         link: "/projects/app-design",
       },
+      {
+        title: "RFP Design",
+        thumbnail: "https://i.imgur.com/utKRMUR.jpeg",
+        focalX: "20%",
+        focalY: "5%",
+        zoom: "1.7",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/utKRMUR.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/UUHqz4F.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/Ev5pB2p.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/GDnteWR.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/ORom89D.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/AIE0jFH.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/Rvy9bv9.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/hJqstv0.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+          [
+            {
+              src: "https://i.imgur.com/AkpgeGS.jpeg",
+              focalX: "20%",
+              focalY: "5%",
+              zoom: "1.7",
+            },
+          ],
+        ],
+        slug: "rfp-design",
+        link: "/projects/rfp-design",
+      },
     ],
   },
   //Blue Like Me LLC.
@@ -267,75 +350,6 @@ const projects = [
         ],
         slug: "blue-like-me-yoga-mats",
         link: "/projects/blue-like-me-yoga-mats",
-      },
-    ],
-  },
-  //RFP Design
-  {
-    company: "RFP Design",
-    projects: [
-      {
-        thumbnail: "https://i.imgur.com/utKRMUR.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/utKRMUR.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/UUHqz4F.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/UUHqz4F.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/Ev5pB2p.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/Ev5pB2p.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/GDnteWR.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/GDnteWR.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/ORom89D.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/ORom89D.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/AIE0jFH.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/AIE0jFH.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/Rvy9bv9.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/Rvy9bv9.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/hJqstv0.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/hJqstv0.jpeg"]],
-      },
-      {
-        thumbnail: "https://i.imgur.com/AkpgeGS.jpeg",
-        focalX: "20%",
-        focalY: "5%",
-        zoom: "1.7",
-        slides: [["https://i.imgur.com/AkpgeGS.jpeg"]],
       },
     ],
   },

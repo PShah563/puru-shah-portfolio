@@ -230,6 +230,10 @@
   max-width: 50%;
 }
 
+.carousel-slide.two-images.column-layout img {
+  max-height: 40vh;
+}
+
 .carousel-slide.column-layout img {
   max-width: calc(70% - 0.5rem);
 }

@@ -5,15 +5,23 @@ function Landing() {
   const logoRef = useRef(null);
   const [scale, setScale] = useState(1);
 
+  function getZoomRatio() {
+  return window.outerWidth / window.innerWidth;
+}
+
   useEffect(() => {
     const updateScale = () => {
       const maxWidth = 800;
+      const zoomRatio = getZoomRatio();
+
       if (!logoRef.current) return;
 
       const containerWidth = logoRef.current.getBoundingClientRect().width;
       const clampedWidth = Math.min(containerWidth, maxWidth);
+      const normalizedWidth = clampedWidth / zoomRatio;
+      const scaleValue = normalizedWidth / maxWidth;
 
-      setScale(clampedWidth / maxWidth);
+      setScale(Math.min(scaleValue, 1));
     };
 
     requestAnimationFrame(() => setTimeout(updateScale, 0));
