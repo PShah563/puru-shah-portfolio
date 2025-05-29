@@ -44,7 +44,7 @@
 }
 
 .website:hover {
-  color: #333;
+  color: var(--logo-bg);
 }
 
 .project-logo-container {
