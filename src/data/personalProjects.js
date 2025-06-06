@@ -10,7 +10,7 @@ const personalProjects = [
         focalY: "5%",
         zoom: "1.08",
         slides: [
-          ["https://i.imgur.com/pggMnoP.jpeg"],
+          ["https://i.imgur.com/DyzOgsv.jpeg"],
         ],
       },
       {
@@ -20,7 +20,7 @@ const personalProjects = [
         focalY: "5%",
         zoom: "1.1",
         slides: [
-          ["https://i.imgur.com/DyzOgsv.jpeg"],
+          ["https://i.imgur.com/pggMnoP.jpeg"],
         ],
       },
     ],
