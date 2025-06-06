@@ -44,16 +44,16 @@ const personalProjects = [
       },
             {
         title: "Card Front",
-        thumbnail: "https://i.imgur.com/jckIIa1.png",
+        thumbnail: "https://i.imgur.com/24EPCeB.png",
         slides: [
-          ["https://i.imgur.com/jckIIa1.png"],
+          ["https://i.imgur.com/24EPCeB.png"],
         ],
       },
             {
         title: "Card Back",
-        thumbnail: "https://i.imgur.com/24EPCeB.png",
+        thumbnail: "https://i.imgur.com/jckIIa1.png",
         slides: [
-          ["https://i.imgur.com/24EPCeB.png"],
+          ["https://i.imgur.com/jckIIa1.png"],
         ],
       },
     ],
