@@ -5,7 +5,7 @@ const personalProjects = [
     projects: [
       {
         title: "Card Front",
-        thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
+        thumbnail: "https://i.imgur.com/pggMnoP.jpeg",
         focalX: "-50%",
         focalY: "5%",
         zoom: "1.1",
@@ -15,7 +15,7 @@ const personalProjects = [
       },
       {
         title: "Card Back",
-        thumbnail: "https://i.imgur.com/pggMnoP.jpeg",
+        thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
         focalX: "-20%",
         focalY: "5%",
         zoom: "1.08",
