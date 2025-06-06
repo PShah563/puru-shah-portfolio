@@ -4,16 +4,6 @@ const personalProjects = [
     company: "Radiant Theaters",
     projects: [
       {
-        title: "Card Back",
-        thumbnail: "https://i.imgur.com/pggMnoP.jpeg",
-        focalX: "-20%",
-        focalY: "5%",
-        zoom: "1.08",
-        slides: [
-          ["https://i.imgur.com/DyzOgsv.jpeg"],
-        ],
-      },
-      {
         title: "Card Front",
         thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
         focalX: "-50%",
@@ -21,6 +11,16 @@ const personalProjects = [
         zoom: "1.1",
         slides: [
           ["https://i.imgur.com/pggMnoP.jpeg"],
+        ],
+      },
+      {
+        title: "Card Back",
+        thumbnail: "https://i.imgur.com/pggMnoP.jpeg",
+        focalX: "-20%",
+        focalY: "5%",
+        zoom: "1.08",
+        slides: [
+          ["https://i.imgur.com/DyzOgsv.jpeg"],
         ],
       },
     ],
