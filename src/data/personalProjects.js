@@ -4,7 +4,7 @@ const personalProjects = [
     company: "Radiant Theaters",
     projects: [
       {
-        title: "Card Front",
+        title: "Card Back",
         thumbnail: "https://i.imgur.com/pggMnoP.jpeg",
         focalX: "-20%",
         focalY: "5%",
@@ -14,7 +14,7 @@ const personalProjects = [
         ],
       },
       {
-        title: "Card Back",
+        title: "Card Front",
         thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
         focalX: "-50%",
         focalY: "5%",
