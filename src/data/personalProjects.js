@@ -76,6 +76,20 @@ const personalProjects = [
       },
     ],
   },
+  //Varland
+  {
+    company: "Varland",
+    projects: [
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
+        focalX: "-60%",
+        focalY: "0",
+        zoom: "1.15",
+        slides: [["https://i.imgur.com/dGsjtwY.jpeg"]],
+      },
+    ],
+  },
 ];
 
 export default personalProjects;
