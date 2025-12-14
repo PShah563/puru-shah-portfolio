@@ -85,14 +85,14 @@ const personalProjects = [
         thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
         focalX: "-50%",
         focalY: "5%",
-        zoom: "1.1",
+        zoom: "1",
         slides: [
           [
             {
               src: "https://i.imgur.com/dGsjtwY.jpeg",
               focalX: "-50%",
               focalY: "5%",
-              zoom: "1.1",
+              zoom: "1",
 
             },
             {
