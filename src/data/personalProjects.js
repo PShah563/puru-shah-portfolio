@@ -77,16 +77,32 @@ const personalProjects = [
     ],
   },
   //Varland
-  {
+   {
     company: "Varland",
     projects: [
       {
         title: "Business Card",
         thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
-        focalX: "-60%",
-        focalY: "0",
-        zoom: "1.15",
-        slides: [["https://i.imgur.com/dGsjtwY.jpeg"]],
+        focalX: "-50%",
+        focalY: "5%",
+        zoom: "1.1",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/dGsjtwY.jpeg",
+              focalX: "-50%",
+              focalY: "5%",
+              zoom: "1.1",
+
+            },
+            {
+              src: "https://i.imgur.com/nNJHRsh.jpeg",
+              focalX: "-20%",
+              focalY: "5%",
+              zoom: "1.08",
+            },
+          ],
+        ],
       },
     ],
   },
