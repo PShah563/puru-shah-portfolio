@@ -7,7 +7,11 @@ import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import "../styles/Projects.css";
 
 function Projects() {
-  const allProjects = [...projects, ...personalProjects];
+  const allProjects = [
+    ...projects,
+    { id: "other-projects-section" },
+  ];
+
   const itemRefs = useRef([]);
   const sectionRef = useRef();
   const svgRef = useRef();
@@ -34,6 +38,16 @@ function Projects() {
     projects: allProjects,
     verticalStartOffset,
     verticalStartOffset2,
+  });
+
+  const flattenedPersonalProjects = personalProjects.flatMap((group) => {
+    if (!group.projects) return [];
+    return group.projects.flatMap((proj) => {
+      if (proj.projects && !proj.thumbnail) {
+        return proj.projects;
+      }
+      return proj;
+    });
   });
 
   return (
@@ -68,6 +82,7 @@ function Projects() {
               logo={item.logo || ""}
               projects={item.projects}
               index={idx}
+              projectType="professional"
             />
           </FadeInWhenVisible>
         </div>
@@ -75,30 +90,27 @@ function Projects() {
 
       <div className="projects-heading-wrapper">
         <div className="projects-heading margin-top">
-          <h1>PERSONAL PROJECTS</h1>
+          <h1>OTHER PROJECTS</h1>
         </div>
       </div>
 
-      {personalProjects.map((item, pIdx) => {
-        const globalIndex = projects.length + pIdx;
-        return (
-          <div
-            key={`personal-${pIdx}`}
-            className="project-wrapper"
-            ref={(el) => (itemRefs.current[globalIndex] = el)}
-          >
-            <FadeInWhenVisible>
-              <ProjectItem
-                company={item.company}
-                website={item.website || ""}
-                logo={item.logo || ""}
-                projects={item.projects}
-                index={globalIndex}
-              />
-            </FadeInWhenVisible>
-          </div>
-        );
-      })}
+      {flattenedPersonalProjects.length > 0 && (
+        <div
+          className="project-wrapper other-projects-wrapper"
+          ref={(el) => (itemRefs.current[projects.length] = el)}
+        >
+          <FadeInWhenVisible>
+            <ProjectItem
+              company=""
+              website=""
+              logo=""
+              projects={flattenedPersonalProjects}
+              index={projects.length}
+              projectType="other"
+            />
+          </FadeInWhenVisible>
+        </div>
+      )}
     </section>
   );
 }

@@ -355,20 +355,6 @@ const projects = [
       },
     ],
   },
-  //Metro One
-  {
-    company: "Metro One",
-    projects: [
-      {
-        title: "Flyer",
-        thumbnail: "https://i.imgur.com/9Aq1nP2.png",
-        focalX: "10%",
-        focalY: "0",
-        zoom: "1.35",
-        slides: [["https://i.imgur.com/9Aq1nP2.png"]],
-      },
-    ],
-  },
 ];
 
 export default projects;

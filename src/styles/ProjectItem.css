@@ -174,7 +174,7 @@
   background: rgba(255, 255, 255, 0.11);
   cursor: default;
   border-radius: 16px;
-  width: 100%;
+  width: fit-content;
   height: 90%;
   max-width: 90vw;
   box-sizing: border-box;

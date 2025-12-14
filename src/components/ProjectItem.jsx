@@ -11,7 +11,14 @@ function normalizeImage(src) {
   return src;
 }
 
-function ProjectItem({ company, projects, website, logo, index }) {
+function ProjectItem({
+  company,
+  projects,
+  website,
+  logo,
+  index,
+  projectType = "professional",
+}) {
   const [carouselProject, setCarouselProject] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [layoutClass, setLayoutClass] = useState("row-layout");
@@ -19,6 +26,12 @@ function ProjectItem({ company, projects, website, logo, index }) {
   const isEven = index % 2 === 0;
   const { theme } = useTheme();
   const hasLogo = logo !== "";
+
+  const isProfessional = projectType === "professional";
+  const isOther = projectType === "other";
+  const isPersonal = projectType === "personal";
+  const showHeading = isProfessional || isPersonal;
+  const showTitles = true;
 
   const openCarousel = (project) => {
     setCarouselProject(project);
@@ -102,24 +115,30 @@ function ProjectItem({ company, projects, website, logo, index }) {
   }, [carouselProject, currentSlide]);
 
   return (
-    <div className={`project-item ${isEven ? "even" : "odd"}`}>
-      <div className="project-heading">
-        <h2 className="company-name">{company}</h2>
-        {website ? (
-          <a
-            className="website"
-            href={`https://${website}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {website}
-          </a>
-        ) : (
-          <p className="website">&nbsp;</p>
-        )}
-      </div>
+    <div
+      className={`project-item ${
+        isEven ? "even" : "odd"
+      } project-item--${projectType}`}
+    >
+      {showHeading && (
+        <div className="project-heading">
+          <h2 className="company-name">{company}</h2>
+          {website ? (
+            <a
+              className="website"
+              href={`https://${website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {website}
+            </a>
+          ) : (
+            <p className="website">&nbsp;</p>
+          )}
+        </div>
+      )}
 
-      {logo && (
+      {logo && hasLogo && (
         <div className="project-logo-container">
           <img
             src={`${logo}_${theme}.png`}
@@ -128,6 +147,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
           />
         </div>
       )}
+
       <AnimatedGridProvider gridId={`grid-${index}`}>
         <div className={`project-grid ${hasLogo ? "has-logo" : ""}`}>
           {projects.map((proj, idx) => {
@@ -152,7 +172,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
                 <div className="project-thumb-wrapper">
                   <img
                     src={proj.thumbnail}
-                    alt={proj.title}
+                    alt={proj.title || "Project thumbnail"}
                     className="project-thumb"
                     style={{
                       top: proj.focalY || "auto",
@@ -161,12 +181,17 @@ function ProjectItem({ company, projects, website, logo, index }) {
                     }}
                   />
                 </div>
-                <span
-                  className={`project-title ${proj.link ? "haslink" : ""}`}
-                  onClick={openLink}
-                >
-                  {proj.title}
-                </span>
+
+                {showTitles && (
+                  <span
+                    className={`project-title ${
+                      proj.link ? "haslink" : ""
+                    }`}
+                    onClick={openLink}
+                  >
+                    {proj.title}
+                  </span>
+                )}
               </AnimatedGridItem>
             );
           })}
@@ -195,7 +220,7 @@ function ProjectItem({ company, projects, website, logo, index }) {
                 {carouselProject.slides[currentSlide].map((img, idx) => (
                   <img
                     key={idx}
-                    src={img}
+                    src={typeof img === "string" ? img : img.src}
                     className="carousel-image"
                     alt={`Slide ${idx + 1}`}
                   />
