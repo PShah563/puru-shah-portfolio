@@ -83,7 +83,7 @@ const personalProjects = [
       {
         title: "Business Card",
         thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
-        focalX: "-50%",
+        focalX: "0",
         focalY: "5%",
         zoom: "1",
         slides: [
