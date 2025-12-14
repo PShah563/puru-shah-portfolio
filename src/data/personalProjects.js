@@ -90,7 +90,7 @@ const personalProjects = [
           [
             {
               src: "https://i.imgur.com/dGsjtwY.jpeg",
-              focalX: "-50%",
+              focalX: "0",
               focalY: "5%",
               zoom: "1",
 
