@@ -68,11 +68,11 @@ const personalProjects = [
     projects: [
       {
         title: "Logo Sheet",
-        thumbnail: "https://i.imgur.com/0p7dCy2.jpeg",
+        thumbnail: "https://i.imgur.com/2BZkGuI.jpeg",
         focalX: "-60%",
         focalY: "0",
         zoom: "1.15",
-        slides: [["https://i.imgur.com/0p7dCy2.jpeg"]],
+        slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
       },
     ],
   },
