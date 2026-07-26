@@ -40,7 +40,7 @@ const personalProjects = [
         ],
       },
       {
-        title: "Card",
+        title: "Business Card",
         thumbnail: "https://i.imgur.com/24EPCeB.png",
         slides: [
           ["https://i.imgur.com/24EPCeB.png", "https://i.imgur.com/jckIIa1.png"],
