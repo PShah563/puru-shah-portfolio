@@ -1,17 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import ProjectItem from "./ProjectItem";
 import projects from "../data/projects";
-import personalProjects from "../data/personalProjects";
 import { useBackgroundPaths } from "./BackgroundPaths";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import "../styles/Projects.css";
 
 function Projects() {
-  const allProjects = [
-    ...projects,
-    { id: "other-projects-section" },
-  ];
-
   const itemRefs = useRef([]);
   const sectionRef = useRef();
   const svgRef = useRef();
@@ -35,19 +29,9 @@ function Projects() {
     svgRef2,
     sectionRef,
     itemRefs,
-    projects: allProjects,
+    projects,
     verticalStartOffset,
     verticalStartOffset2,
-  });
-
-  const flattenedPersonalProjects = personalProjects.flatMap((group) => {
-    if (!group.projects) return [];
-    return group.projects.flatMap((proj) => {
-      if (proj.projects && !proj.thumbnail) {
-        return proj.projects;
-      }
-      return proj;
-    });
   });
 
   return (
@@ -71,7 +55,7 @@ function Projects() {
 
       {projects.map((item, idx) => (
         <div
-          key={`main-${idx}`}
+          key={item.id || `main-${idx}`}
           className="project-wrapper"
           ref={(el) => (itemRefs.current[idx] = el)}
         >
@@ -87,30 +71,6 @@ function Projects() {
           </FadeInWhenVisible>
         </div>
       ))}
-
-      <div className="projects-heading-wrapper">
-        <div className="projects-heading margin-top">
-          <h1>OTHER PROJECTS</h1>
-        </div>
-      </div>
-
-      {flattenedPersonalProjects.length > 0 && (
-        <div
-          className="project-wrapper other-projects-wrapper"
-          ref={(el) => (itemRefs.current[projects.length] = el)}
-        >
-          <FadeInWhenVisible>
-            <ProjectItem
-              company=""
-              website=""
-              logo=""
-              projects={flattenedPersonalProjects}
-              index={projects.length}
-              projectType="other"
-            />
-          </FadeInWhenVisible>
-        </div>
-      )}
     </section>
   );
 }

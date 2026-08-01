@@ -355,6 +355,89 @@ const projects = [
       },
     ],
   },
+  // Other Projects
+  {
+    id: "other-projects-section",
+    company: "Other Projects",
+    projects: [
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
+        focalX: "-50%",
+        focalY: "5%",
+        zoom: "1.1",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/DyzOgsv.jpeg",
+              focalX: "-50%",
+              focalY: "5%",
+              zoom: "1.1",
+            },
+            {
+              src: "https://i.imgur.com/pggMnoP.jpeg",
+              focalX: "-20%",
+              focalY: "5%",
+              zoom: "1.08",
+            },
+          ],
+        ],
+      },
+      {
+        title: "Brochure",
+        thumbnail: "https://i.imgur.com/Z7Tc6WA.png",
+        slides: [
+          ["https://i.imgur.com/Z7Tc6WA.png", "https://i.imgur.com/vrG2Lb4.png"],
+        ],
+      },
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/24EPCeB.png",
+        slides: [
+          ["https://i.imgur.com/24EPCeB.png", "https://i.imgur.com/jckIIa1.png"],
+        ],
+      },
+      {
+        title: "Flyer",
+        thumbnail: "https://i.imgur.com/9Aq1nP2.png",
+        focalX: "10%",
+        focalY: "0",
+        zoom: "1.35",
+        slides: [["https://i.imgur.com/9Aq1nP2.png"]],
+      },
+      {
+        title: "Logo Sheet",
+        thumbnail: "https://i.imgur.com/2BZkGuI.jpeg",
+        focalX: "-30%",
+        focalY: "0",
+        zoom: "1.15",
+        slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
+      },
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
+        focalX: "0",
+        focalY: "0%",
+        zoom: "1",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/dGsjtwY.jpeg",
+              focalX: "0",
+              focalY: "0%",
+              zoom: "1",
+            },
+            {
+              src: "https://i.imgur.com/nNJHRsh.jpeg",
+              focalX: "-20%",
+              focalY: "5%",
+              zoom: "1.08",
+            },
+          ],
+        ],
+      },
+    ],
+  },
 ];
 
 export default projects;
