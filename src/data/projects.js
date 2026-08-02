@@ -218,7 +218,7 @@ const projects = [
               zoom: "1.1",
             },
             {
-              src: "https://i.imgur.com/pggMnoP.jpeg",
+              src: "https://i.imgur.com/aaW39ro.png",
               focalX: "-20%",
               focalY: "5%",
               zoom: "1.08",
