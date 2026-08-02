@@ -420,6 +420,14 @@ const projects = [
     company: "Other Projects",
     projects: [
       {
+        title: "Logo Sheet",
+        thumbnail: "https://i.imgur.com/2BZkGuI.jpeg",
+        focalX: "-30%",
+        focalY: "0",
+        zoom: "1.15",
+        slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
+      },
+      {
         title: "Brochure",
         thumbnail: "https://i.imgur.com/Z7Tc6WA.png",
         slides: [
@@ -440,14 +448,6 @@ const projects = [
         focalY: "0",
         zoom: "1.35",
         slides: [["https://i.imgur.com/9Aq1nP2.png"]],
-      },
-      {
-        title: "Logo Sheet",
-        thumbnail: "https://i.imgur.com/2BZkGuI.jpeg",
-        focalX: "-30%",
-        focalY: "0",
-        zoom: "1.15",
-        slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
       },
       {
         title: "Business Card",
