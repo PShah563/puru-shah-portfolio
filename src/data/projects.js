@@ -199,6 +199,65 @@ const projects = [
       },
     ],
   },
+  // Radiant Theaters
+  {
+    company: "Radiant Theaters",
+    projects: [
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
+        focalX: "-50%",
+        focalY: "5%",
+        zoom: "1.1",
+        slides: [
+          [
+            {
+              src: "https://i.imgur.com/DyzOgsv.jpeg",
+              focalX: "-50%",
+              focalY: "5%",
+              zoom: "1.1",
+            },
+            {
+              src: "https://i.imgur.com/pggMnoP.jpeg",
+              focalX: "-20%",
+              focalY: "5%",
+              zoom: "1.08",
+            },
+          ],
+        ],
+      },
+      {
+        title: "Promotional Flyer",
+        thumbnail: "https://i.imgur.com/PrvvE0L.jpeg",
+        focalX: "25%",
+        focalY: "45%",
+        zoom: "2",
+        slides: [["https://i.imgur.com/PrvvE0L.jpeg"]],
+      },
+      {
+        title: "App Design",
+        thumbnail: "https://i.imgur.com/0FBqOqg.jpeg",
+        focalX: "27%",
+        focalY: "50%",
+        zoom: "2.2",
+        slides: [
+          ["https://i.imgur.com/CZ3sGg7.png"],
+          ["https://i.imgur.com/kBLGfgP.png"],
+          ["https://i.imgur.com/ja4a1FW.png"],
+        ],
+        slug: "radiant-theaters-app-design",
+        link: "/projects/radiant-theaters-app-design",
+      },
+      {
+        title: "Website Design",
+        thumbnail: "https://i.imgur.com/LPGiBAs.jpeg",
+        focalX: "30%",
+        focalY: "60%",
+        zoom: "2.5",
+        slides: [["https://i.imgur.com/LPGiBAs.jpeg"]],
+      },
+    ],
+  },
   //Blue Like Me LLC.
   {
     company: "Blue Like Me LLC.",
@@ -360,29 +419,6 @@ const projects = [
     id: "other-projects-section",
     company: "Other Projects",
     projects: [
-      {
-        title: "Business Card",
-        thumbnail: "https://i.imgur.com/DyzOgsv.jpeg",
-        focalX: "-50%",
-        focalY: "5%",
-        zoom: "1.1",
-        slides: [
-          [
-            {
-              src: "https://i.imgur.com/DyzOgsv.jpeg",
-              focalX: "-50%",
-              focalY: "5%",
-              zoom: "1.1",
-            },
-            {
-              src: "https://i.imgur.com/pggMnoP.jpeg",
-              focalX: "-20%",
-              focalY: "5%",
-              zoom: "1.08",
-            },
-          ],
-        ],
-      },
       {
         title: "Brochure",
         thumbnail: "https://i.imgur.com/Z7Tc6WA.png",
