@@ -90,14 +90,6 @@ const projects = [
         slides: [["https://i.imgur.com/SOipspE.png"]],
       },
       {
-        title: "GBCS LinkedIn Banner Design",
-        thumbnail: "https://i.imgur.com/1vr2rQd.png",
-        focalX: "-40%",
-        focalY: "0",
-        zoom: "1",
-        slides: [["https://i.imgur.com/1vr2rQd.png"]],
-      },
-      {
         title: "App Design",
         thumbnail: "https://i.imgur.com/GzWQXds.png",
         focalX: "30%",
@@ -228,11 +220,11 @@ const projects = [
       },
       {
         title: "Promotional Flyer",
-        thumbnail: "https://i.imgur.com/PrvvE0L.jpeg",
+        thumbnail: "https://i.imgur.com/3WTNVmg.jpeg",
         focalX: "25%",
         focalY: "45%",
         zoom: "2",
-        slides: [["https://i.imgur.com/PrvvE0L.jpeg"]],
+        slides: [["https://i.imgur.com/3WTNVmg.jpeg"]],
       },
       {
         title: "App Design",
@@ -255,6 +247,14 @@ const projects = [
         focalY: "60%",
         zoom: "2.5",
         slides: [["https://i.imgur.com/LPGiBAs.jpeg"]],
+      },
+      {
+        title: "Instagram Ad",
+        thumbnail: "https://i.imgur.com/kNOJzIY.jpeg",
+        focalX: "10%",
+        focalY: "15%",
+        zoom: "1.3",
+        slides: [["https://i.imgur.com/kNOJzIY.jpeg"]],
       },
     ],
   },
