@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: center;
   background-color: var(--bg-logo);
-  height: 50vh;
+  box-sizing: border-box;
+  min-height: auto;
   width: 100vw;
-  padding: 20vh 0 35vh;
+  padding: 0;
   user-select: none;
 }
 
@@ -14,8 +15,8 @@
   width: 90vw;
   max-width: 800px;
   aspect-ratio: 1 / 1;
-  margin-top: 8.2rem;
-  padding: 5rem;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   animation: logoGrow 3s ease forwards;
 }
@@ -24,73 +25,26 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(var(--scale));
-  transform-origin: center center;
   width: 800px;
   height: 800px;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transform-origin: center center;
 }
 
-.p {
-  top: 0;
-  left: 4%;
-  font-size: 500px;
-}
-
-.firstname {
-  top: 4.5%;
-  left: 36.5%;
-  font-size: 350px;
-  font-weight: 300;
-}
-
-.s {
-  top: 30%;
-  left: 11%;
-  font-size: 420px;
-}
-
-.lastname {
-  top: 40%;
-  left: 37.5%;
-  font-size: 280px;
-}
-
-.p,
-.firstname,
-.subheading {
-  color: var(--font-color);
-}
-
-.s,
-.lastname {
-  color: var(--accent-color);
-}
-
-.part {
-  position: absolute;
-  font-family: 'ITC Bauhaus Light', sans-serif;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1;
-}
-
-.subheading {
-  top: 72.5%;
-  left: 35.5%;
-  font-size: 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  text-wrap: nowrap;
-  letter-spacing: .12rem;
+.landing-logo {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .email a {
   position: absolute;
-  color: var(--font-color);
-  bottom: 0;
-  font-size: 32px;
+  bottom: -0.25rem;
   left: 18.5%;
+  color: var(--font-color);
+  font-size: 32px;
   font-weight: 550;
+  line-height: 1;
   letter-spacing: .15rem;
 }
 
@@ -103,13 +57,3 @@
   }
 }
 
-@media(max-width: 768px) {
-  .logo-wrapper {
-    max-width: 800px;
-  }
-
-  .logo-static {
-    width: 800px;
-    height: 800px;
-  }
-}
