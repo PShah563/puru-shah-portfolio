@@ -182,7 +182,10 @@ export default function ProjectPage() {
                 index={slideIndex}
                 className="project-slide-group"
               >
-                {group.map((img, imgIndex) => {
+                {(project.gridPreview === "first-image"
+                  ? group.slice(0, 1)
+                  : group
+                ).map((img, imgIndex) => {
                   const { src, focalX, focalY, zoom } = normalizeImage(img);
                   return (
                     <div

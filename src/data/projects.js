@@ -30,13 +30,6 @@ const projects = [
         slides: [
           [
             {
-              src: "https://i.imgur.com/4zX9mfk.jpeg",
-              focalX: "-30%",
-              zoom: "1.1",
-            },
-          ],
-          [
-            {
               src: "https://i.imgur.com/r8r81KD.jpeg",
               focalX: "-30%",
               zoom: "1.1",
@@ -88,23 +81,6 @@ const projects = [
         focalY: "45%",
         zoom: "3",
         slides: [["https://i.imgur.com/SOipspE.png"]],
-      },
-      {
-        title: "App Design",
-        thumbnail: "https://i.imgur.com/GzWQXds.png",
-        focalX: "30%",
-        focalY: "-70%",
-        zoom: "3",
-        slides: [
-          ["https://i.imgur.com/lpG32Gz.png"],
-          ["https://i.imgur.com/J0bv3Vy.png"],
-          ["https://i.imgur.com/nQaqHYz.png"],
-          ["https://i.imgur.com/RaSj46O.png"],
-          ["https://i.imgur.com/1TDWnTA.png"],
-          ["https://i.imgur.com/MYbNVz5.png"],
-        ],
-        slug: "app-design",
-        link: "/projects/app-design",
       },
       {
         title: "RFP Design",
@@ -276,36 +252,12 @@ const projects = [
         ],
       },
       {
-        title: "Flyers",
-        thumbnail: "https://i.imgur.com/gYmQYLv.jpeg",
+        title: "Flyer",
+        thumbnail: "https://i.imgur.com/D36GlnB.jpeg",
         focalX: "10%",
         focalY: "5%",
         zoom: "1.3",
         slides: [
-          [
-            {
-              src: "https://i.imgur.com/gYmQYLv.jpeg",
-              focalX: "10%",
-              focalY: "5%",
-              zoom: "1.4",
-            },
-          ],
-          [
-            {
-              src: "https://i.imgur.com/4f3KIi9.jpeg",
-              focalX: "10%",
-              focalY: "5%",
-              zoom: "1.4",
-            },
-          ],
-          [
-            {
-              src: "https://i.imgur.com/mmZLRwv.jpeg",
-              focalX: "10%",
-              focalY: "5%",
-              zoom: "1.4",
-            },
-          ],
           [
             {
               src: "https://i.imgur.com/D36GlnB.jpeg",
@@ -314,62 +266,7 @@ const projects = [
               zoom: "1.4",
             },
           ],
-          [
-            {
-              src: "https://i.imgur.com/R3BQ2B1.jpeg",
-              focalX: "10%",
-              focalY: "15%",
-              zoom: "1.4",
-            },
-          ],
-          [
-            {
-              src: "https://i.imgur.com/J3RLV8N.jpeg",
-              focalX: "10%",
-              focalY: "5%",
-              zoom: "1.4",
-            },
-          ],
         ],
-        slug: "blue-like-me-flyers",
-        link: "/projects/blue-like-me-flyers",
-      },
-      {
-        title: "Tee-Shirt Design",
-        thumbnail: "https://i.imgur.com/JVks3MJ.png",
-        focalX: "30%",
-        focalY: "-43%",
-        zoom: "2.2",
-        slides: [
-          [
-            {
-              src: "https://i.imgur.com/JVks3MJ.png",
-              focalX: "7%",
-              focalY: "0%",
-              zoom: "1.55",
-            },
-            {
-              src: "https://i.imgur.com/4TRtG9R.png",
-              focalX: "10%",
-              zoom: "1.5",
-            },
-          ],
-          [
-            {
-              src: "https://i.imgur.com/CYjO1wU.png",
-              focalX: "9%",
-              focalY: "5%",
-              zoom: "1.2",
-            },
-            {
-              src: "https://i.imgur.com/Q3n0pIe.png",
-              focalX: "10%",
-              zoom: "1.5",
-            },
-          ],
-        ],
-        slug: "blue-like-me-tees",
-        link: "/projects/blue-like-me-tees",
       },
       {
         title: "Yoga Mats",
@@ -409,6 +306,7 @@ const projects = [
             },
           ],
         ],
+        gridPreview: "first-image",
         slug: "blue-like-me-yoga-mats",
         link: "/projects/blue-like-me-yoga-mats",
       },
@@ -428,34 +326,10 @@ const projects = [
         slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
       },
       {
-        title: "Brochure",
-        thumbnail: "https://i.imgur.com/Z7Tc6WA.png",
+        title: "Business Cards",
+        thumbnail: "https://i.imgur.com/s0PvI5q.png",
         slides: [
-          ["https://i.imgur.com/Z7Tc6WA.png", "https://i.imgur.com/vrG2Lb4.png"],
-        ],
-      },
-      {
-        title: "Business Card",
-        thumbnail: "https://i.imgur.com/24EPCeB.png",
-        slides: [
-          ["https://i.imgur.com/24EPCeB.png", "https://i.imgur.com/jckIIa1.png"],
-        ],
-      },
-      {
-        title: "Flyer",
-        thumbnail: "https://i.imgur.com/9Aq1nP2.png",
-        focalX: "10%",
-        focalY: "0",
-        zoom: "1.35",
-        slides: [["https://i.imgur.com/9Aq1nP2.png"]],
-      },
-      {
-        title: "Business Card",
-        thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
-        focalX: "0",
-        focalY: "0%",
-        zoom: "1",
-        slides: [
+          ["https://i.imgur.com/s0PvI5q.png", "https://i.imgur.com/g62c7mw.jpeg"],
           [
             {
               src: "https://i.imgur.com/dGsjtwY.jpeg",
@@ -470,7 +344,19 @@ const projects = [
               zoom: "1.08",
             },
           ],
+          ["https://i.imgur.com/GBIAHpv.png", "https://i.imgur.com/nrg7vbE.png"],
         ],
+        gridPreview: "first-image",
+        slug: "other-projects-business-cards",
+        link: "/projects/other-projects-business-cards",
+      },
+      {
+        title: "Flyer",
+        thumbnail: "https://i.imgur.com/9Aq1nP2.png",
+        focalX: "10%",
+        focalY: "0",
+        zoom: "1.35",
+        slides: [["https://i.imgur.com/9Aq1nP2.png"]],
       },
     ],
   },
