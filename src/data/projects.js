@@ -319,11 +319,11 @@ const projects = [
     projects: [
       {
         title: "Logo Sheet",
-        thumbnail: "https://i.imgur.com/2BZkGuI.jpeg",
+        thumbnail: "https://i.imgur.com/LW4bqsm.png",
         focalX: "-30%",
         focalY: "0",
         zoom: "1.15",
-        slides: [["https://i.imgur.com/2BZkGuI.jpeg"]],
+        slides: [["https://i.imgur.com/LW4bqsm.png"]],
       },
       {
         title: "Business Cards",
