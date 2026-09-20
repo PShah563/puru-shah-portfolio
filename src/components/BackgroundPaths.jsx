@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useId } from "react";
 
 export function useBackgroundPaths({
   svgRef,
@@ -12,6 +12,8 @@ export function useBackgroundPaths({
   headingOffset2 = 121,
   finalVerticalOffset = 55,
 }) {
+  const websiteMaskId = useId();
+
   useEffect(() => {
     const drawPaths = () => {
       const svg = svgRef.current;
@@ -203,7 +205,50 @@ export function useBackgroundPaths({
       };
 
       svg.appendChild(createPath(path1, "var(--heading-bg)", 23));
-      svg2.appendChild(createPath(path2, "#947f57", 16));
+      const accentPath = createPath(path2, "#947f57", 16);
+      const websiteLinks = section.querySelectorAll(
+        '.project-item--professional .project-heading a.website'
+      );
+
+      if (websiteLinks.length) {
+        const namespace = "http://www.w3.org/2000/svg";
+        const defs = document.createElementNS(namespace, "defs");
+        const mask = document.createElementNS(namespace, "mask");
+        mask.setAttribute("id", websiteMaskId);
+        mask.setAttribute("maskUnits", "userSpaceOnUse");
+        mask.setAttribute("x", 0);
+        mask.setAttribute("y", 0);
+        mask.setAttribute("width", width);
+        mask.setAttribute("height", height);
+        const background = document.createElementNS(namespace, "rect");
+        background.setAttribute("width", width);
+        background.setAttribute("height", height);
+        background.setAttribute("fill", "white");
+        mask.appendChild(background);
+
+        websiteLinks.forEach((link) => {
+          // Layout offsets keep the cutout stable during the entrance animation.
+          let x = 0;
+          let y = 0;
+          for (let node = link; node && node !== section; node = node.offsetParent) {
+            x += node.offsetLeft;
+            y += node.offsetTop;
+          }
+          const cutout = document.createElementNS(namespace, "rect");
+          cutout.setAttribute("x", x - 7.5);
+          cutout.setAttribute("y", y - 6);
+          cutout.setAttribute("width", link.offsetWidth + 15);
+          cutout.setAttribute("height", link.offsetHeight + 12);
+          cutout.setAttribute("rx", (link.offsetHeight + 12) / 2);
+          cutout.setAttribute("fill", "black");
+          mask.appendChild(cutout);
+        });
+
+        defs.appendChild(mask);
+        svg2.appendChild(defs);
+        accentPath.setAttribute("mask", `url(#${websiteMaskId})`);
+      }
+      svg2.appendChild(accentPath);
     };
 
     requestAnimationFrame(drawPaths);
@@ -213,6 +258,9 @@ export function useBackgroundPaths({
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
+      sectionRef.current.querySelectorAll('.project-heading a.website').forEach((link) => {
+        observer.observe(link);
+      });
     }
     return () => {
       observer.disconnect();
@@ -224,5 +272,6 @@ export function useBackgroundPaths({
     headingOffset,
     headingOffset2,
     finalVerticalOffset,
+    websiteMaskId,
   ]);
 }

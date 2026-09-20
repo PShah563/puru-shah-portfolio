@@ -47,6 +47,19 @@
   color: var(--logo-bg);
 }
 
+.light .project-item--professional a.website {
+  color: #000;
+}
+
+.dark .project-item--professional a.website {
+  color: #fff;
+}
+
+.project-item--professional a.website:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .project-logo-container {
   position: absolute;
   top: 105px;
