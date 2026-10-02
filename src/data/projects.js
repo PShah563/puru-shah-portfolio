@@ -167,6 +167,27 @@ const projects = [
       },
     ],
   },
+  // GeoFlutter
+  {
+    company: "GeoFlutter",
+    projects: [
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/s0PvI5q.png",
+        slides: [
+          ["https://i.imgur.com/s0PvI5q.png", "https://i.imgur.com/g62c7mw.jpeg"],
+        ],
+      },
+      {
+        title: "Instagram Ad",
+        thumbnail: "https://i.imgur.com/ue0qW2V.jpeg",
+        focalX: "10%",
+        focalY: "12%",
+        zoom: "1.3",
+        slides: [["https://i.imgur.com/ue0qW2V.jpeg"]],
+      },
+    ],
+  },
   // Radiant Theaters
   {
     company: "Radiant Theaters",
@@ -318,10 +339,12 @@ const projects = [
         slides: [["https://i.imgur.com/LW4bqsm.png"]],
       },
       {
-        title: "Business Cards",
-        thumbnail: "https://i.imgur.com/s0PvI5q.png",
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/dGsjtwY.jpeg",
+        focalX: "0",
+        focalY: "0%",
+        zoom: "1",
         slides: [
-          ["https://i.imgur.com/s0PvI5q.png", "https://i.imgur.com/g62c7mw.jpeg"],
           [
             {
               src: "https://i.imgur.com/dGsjtwY.jpeg",
@@ -336,11 +359,14 @@ const projects = [
               zoom: "1.08",
             },
           ],
+        ],
+      },
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/GBIAHpv.png",
+        slides: [
           ["https://i.imgur.com/GBIAHpv.png", "https://i.imgur.com/nrg7vbE.png"],
         ],
-        gridPreview: "first-image",
-        slug: "other-projects-business-cards",
-        link: "/projects/other-projects-business-cards",
       },
       {
         title: "Flyer",
