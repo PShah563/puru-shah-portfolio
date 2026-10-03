@@ -122,7 +122,13 @@ function ProjectItem({
     >
       {showHeading && (
         <div className="project-heading">
-          <h2 className="company-name">{company}</h2>
+          <h2 className="company-name">
+            {company.split(/(\/)/).map((part, idx) =>
+              part === "/" ? (
+                <span className="company-name-separator" key={idx}>/</span>
+              ) : part
+            )}
+          </h2>
           {website ? (
             <a
               className="website"
@@ -174,7 +180,15 @@ function ProjectItem({
                     src={proj.thumbnail}
                     alt={proj.title || "Project thumbnail"}
                     className="project-thumb"
-                    style={{
+                    style={proj.thumbnailFit === "cover" ? {
+                      width: "100%",
+                      height: "100%",
+                      top: 0,
+                      left: 0,
+                      objectFit: "cover",
+                      objectPosition: `${proj.focalX || "50%"} ${proj.focalY || "50%"}`,
+                      transform: `scale(${proj.zoom || 1})`,
+                    } : {
                       top: proj.focalY || "auto",
                       left: proj.focalX || "auto",
                       transform: `scale(${proj.zoom || 1})`,

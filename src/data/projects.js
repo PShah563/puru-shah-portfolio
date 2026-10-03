@@ -167,9 +167,9 @@ const projects = [
       },
     ],
   },
-  // GeoFlutter
+  // GeoFlutter/Kynari
   {
-    company: "GeoFlutter",
+    company: "GeoFlutter / Kynari",
     projects: [
       {
         title: "Business Card",
@@ -185,6 +185,22 @@ const projects = [
         focalY: "12%",
         zoom: "1.3",
         slides: [["https://i.imgur.com/ue0qW2V.jpeg"]],
+      },
+      {
+        title: "Business Card",
+        thumbnail: "https://i.imgur.com/GBIAHpv.png",
+        slides: [
+          ["https://i.imgur.com/GBIAHpv.png", "https://i.imgur.com/nrg7vbE.png"],
+        ],
+      },
+      {
+        title: "Website Design",
+        thumbnail: "https://i.imgur.com/AmyUSmg.jpeg",
+        thumbnailFit: "cover",
+        focalX: "50%",
+        focalY: "10%",
+        zoom: "1",
+        slides: [["https://i.imgur.com/AmyUSmg.jpeg"]],
       },
     ],
   },
@@ -332,11 +348,11 @@ const projects = [
     projects: [
       {
         title: "Logo Sheet",
-        thumbnail: "https://i.imgur.com/LW4bqsm.png",
+        thumbnail: "https://i.imgur.com/bUxejwL.png",
         focalX: "-30%",
         focalY: "0",
         zoom: "1.15",
-        slides: [["https://i.imgur.com/LW4bqsm.png"]],
+        slides: [["https://i.imgur.com/bUxejwL.png"]],
       },
       {
         title: "Business Card",
@@ -359,13 +375,6 @@ const projects = [
               zoom: "1.08",
             },
           ],
-        ],
-      },
-      {
-        title: "Business Card",
-        thumbnail: "https://i.imgur.com/GBIAHpv.png",
-        slides: [
-          ["https://i.imgur.com/GBIAHpv.png", "https://i.imgur.com/nrg7vbE.png"],
         ],
       },
       {
